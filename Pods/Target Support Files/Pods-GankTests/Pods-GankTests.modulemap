@@ -1,0 +1,6 @@
+framework module Pods_GankTests {
+  umbrella header "Pods-GankTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

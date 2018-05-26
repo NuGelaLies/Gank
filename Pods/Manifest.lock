@@ -1,0 +1,87 @@
+PODS:
+  - Action (3.5.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - Alamofire (4.7.1)
+  - Differentiator (3.0.2)
+  - Kingfisher (4.5.0)
+  - MJRefresh (3.1.15.3)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - NSObject+Rx (4.2.0):
+    - RxSwift (~> 4.0)
+  - PKHUD (5.0.0)
+  - ReactorKit (1.1.0):
+    - RxSwift (>= 4.0.0)
+  - Result (3.2.4)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxDataSources (3.0.2):
+    - Differentiator (~> 3.0)
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxOptional (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - RxSwiftExt (3.1.0):
+    - RxSwiftExt/Core (= 3.1.0)
+  - RxSwiftExt/Core (3.1.0):
+    - RxSwift (~> 4.0)
+  - SnapKit (4.0.0)
+  - SwiftMessages (4.1.0)
+  - SwiftyJSON (4.0.0)
+  - Then (2.3.0)
+  - UIView+Positioning (1.6)
+
+DEPENDENCIES:
+  - Action (~> 3.5.0)
+  - Kingfisher (~> 4.5.0)
+  - MJRefresh (~> 3.1.15.1)
+  - Moya (~> 11.0.1)
+  - Moya/RxSwift
+  - NSObject+Rx (~> 4.2.0)
+  - PKHUD
+  - ReactorKit (~> 1.1.0)
+  - RxCocoa (~> 4.1.2)
+  - RxDataSources (~> 3.0.2)
+  - RxOptional (~> 3.4.0)
+  - RxSwift (~> 4.1.2)
+  - RxSwiftExt (~> 3.1.0)
+  - SnapKit (~> 4.0.0)
+  - SwiftMessages (~> 4.1.0)
+  - SwiftyJSON (~> 4.0.0)
+  - Then (~> 2.3.0)
+  - UIView+Positioning (~> 1.6)
+
+SPEC CHECKSUMS:
+  Action: d60087ebce41b969d1afdad01e2fa1372a82f26e
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
+  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  NSObject+Rx: cbbc05e3cb3ad446cdbced3e00e39c9efaf02925
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  ReactorKit: 26470a9eff5094fae909a30af0be7cd0cf8a182d
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
+  RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxSwiftExt: a9b9c8e94be009146707f9fcb16eaf3cc1f3910c
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  Then: ee21c97b85ff6062b9b0080c9abb1eea46743345
+  UIView+Positioning: 6e7236a429053ade11051fab7ff9053af36c77a8
+
+PODFILE CHECKSUM: 7c519b073e6e200a841518acc1e38c3e5f52db43
+
+COCOAPODS: 1.4.0.beta.1
