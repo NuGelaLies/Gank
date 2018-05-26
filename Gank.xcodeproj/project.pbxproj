@@ -233,7 +233,6 @@
 				23A91766205936690051622E /* ViewModel */,
 				2344B635204EAC3C00CEEB69 /* Models */,
 				2344B63E204EAC4400CEEB69 /* Networking */,
-				2344B65C204EAC5100CEEB69 /* Services */,
 				2344B652204EAC5100CEEB69 /* Units */,
 				23318CBF204EFA8600F5D4F3 /* Helpers */,
 				2344B654204EAC5100CEEB69 /* Vender */,
@@ -394,13 +393,6 @@
 				2371FDDB2050273A007663B6 /* Home */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		2344B65C204EAC5100CEEB69 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		235694E12063BEB1005CEE5F /* App */ = {
