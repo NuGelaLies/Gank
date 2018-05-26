@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import ReactorKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

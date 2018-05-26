@@ -11,9 +11,7 @@ import Foundation
 
 struct Constant {
     
-    struct key {
-       static var EnvironmentURL = "http://develop.we-service.cn/test-hdd/v2/"
-    }
+    struct key {    }
     
     struct Const {
        static let pageNum = 10

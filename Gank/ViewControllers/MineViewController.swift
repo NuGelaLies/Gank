@@ -33,8 +33,6 @@ class MineViewController: BaseViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        
     }
     
     override func bindViewModel() {

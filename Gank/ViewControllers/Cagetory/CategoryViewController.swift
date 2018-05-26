@@ -8,18 +8,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import ReactorKit
 import MJRefresh
 import RxDataSources
 
-class CategoryViewController: BaseViewController, View {
-    var disposeBag = DisposeBag()
+class CategoryViewController: BaseViewController {
+    let disposeBag = DisposeBag()
     
-    let categorySignal = Variable<GNCategory>(.AllResouse)
+    var viewModel: GankCategoryViewModel!
     
-    var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TNNews>>?
+    let segmentType = BehaviorRelay<GNCategory>(value: .Banifit)
     
-    let dataArr = BehaviorRelay<[TNNews]>(value: [])
+    let items = BehaviorRelay<[TNNews]>(value: [])
     lazy var tableView: UITableView = {
         let tv = UITableView.init()
         tv.tableFooterView = UIView()
@@ -27,42 +26,41 @@ class CategoryViewController: BaseViewController, View {
         tv.rowHeight = UITableViewAutomaticDimension
         tv.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
         tv.mj_header = MJRefreshStateHeader()
-        tv.mj_footer = MJRefreshBackStateFooter()
+        tv.mj_footer = MJRefreshAutoStateFooter()
         tv.register(HomeVeiwCell.self)
         return tv
     }()
     
-    typealias Reactor = CategoryViewReactor
-    
-    func bind(reactor: CategoryViewReactor) {
- 
-        categorySignal.asDriver()
-            .map {Reactor.Action.refresh($0)}
-            .drive(reactor.action)
+    override func bindViewModel() {
+        viewModel.tableData.asDriver()
+            .drive(items)
             .disposed(by: disposeBag)
         
+        viewModel.headerRefreshing
+            .drive(self.tableView.mj_header.rx.endRefreshing)
+            .disposed(by: disposeBag)
         
+        viewModel.footerRefreshing
+            .drive(self.tableView.mj_footer.rx.endRefreshing)
+            .disposed(by: disposeBag)
         
-        dataArr.asDriver()
+        items.asDriver()
             .drive(tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
                 row, model, cell in
                 cell.model = model
             }.disposed(by: disposeBag)
-        
-        reactor.state.map {$0.items}
-            .bind(to: dataArr)
-            .disposed(by: disposeBag)
-        
-        reactor.state.map {$0.isloading}
-            .bind(to: tableView.mj_header.rx.isRefreshing)
-            .disposed(by: disposeBag)
         
         tableView.rx.modelSelected(TNNews.self)
             .subscribeNext { (model) in
                 let web = BaseWebViewController()
                 web.url = model.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+    }
+    
+    override func setupRxConfig() {
+        
+        
     }
     
     override func setupSubViews() {
@@ -70,6 +68,12 @@ class CategoryViewController: BaseViewController, View {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        viewModel = GankCategoryViewModel(
+            input: (headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
+                    footerRefresh: self.tableView.mj_footer.rx.refreshing.asDriver(),
+                    category: .Banifit),
+            dependency: (service: NetworkService(), dispiseBag: disposeBag))
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		230A6F8520878D3F004B6290 /* HomeHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */; };
-		2322E80820947C9400911CED /* MainCategoryReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322E80720947C9400911CED /* MainCategoryReactor.swift */; };
 		2323812D20663FC60024910D /* Response+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323812C20663FC60024910D /* Response+Extension.swift */; };
 		23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC0204EFA8600F5D4F3 /* GCD.swift */; };
 		23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC1204EFA8600F5D4F3 /* TNPreference.swift */; };
@@ -16,6 +15,8 @@
 		23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */; };
 		2337068020A064980047ED21 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2337067F20A064980047ED21 /* Refreshable.swift */; };
 		23404ED720A991DE002B17BD /* GNNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23404ED620A991DD002B17BD /* GNNews.swift */; };
+		2342257720B95F19007EE60F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257620B95F19007EE60F /* NetworkService.swift */; };
+		2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257820B9685E007EE60F /* GankCategoryViewModel.swift */; };
 		2344B5C2204EA9FC00CEEB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5C1204EA9FC00CEEB69 /* AppDelegate.swift */; };
 		2344B5C9204EA9FC00CEEB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2344B5C8204EA9FC00CEEB69 /* Assets.xcassets */; };
 		2344B5CC204EA9FC00CEEB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2344B5CA204EA9FC00CEEB69 /* LaunchScreen.storyboard */; };
@@ -54,7 +55,6 @@
 		2344B647204EAC4400CEEB69 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B641204EAC4400CEEB69 /* Api.swift */; };
 		2344B649204EAC4400CEEB69 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B643204EAC4400CEEB69 /* Request.swift */; };
 		2344B65D204EAC5100CEEB69 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B653204EAC5100CEEB69 /* HUD.swift */; };
-		23677F152085CDE70068C3D5 /* CategoryViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23677F142085CDE70068C3D5 /* CategoryViewReactor.swift */; };
 		2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */; };
 		2375FB1B206F3BEA003E924E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1A206F3BEA003E924E /* Route.swift */; };
 		2375FB1D206F3F16003E924E /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */; };
@@ -89,7 +89,6 @@
 
 /* Begin PBXFileReference section */
 		230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderFooterView.swift; sourceTree = "<group>"; };
-		2322E80720947C9400911CED /* MainCategoryReactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategoryReactor.swift; sourceTree = "<group>"; };
 		2323812C20663FC60024910D /* Response+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Extension.swift"; sourceTree = "<group>"; };
 		23318CC0204EFA8600F5D4F3 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		23318CC1204EFA8600F5D4F3 /* TNPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPreference.swift; sourceTree = "<group>"; };
@@ -97,6 +96,8 @@
 		23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		2337067F20A064980047ED21 /* Refreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
 		23404ED620A991DD002B17BD /* GNNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNNews.swift; sourceTree = "<group>"; };
+		2342257620B95F19007EE60F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2342257820B9685E007EE60F /* GankCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankCategoryViewModel.swift; sourceTree = "<group>"; };
 		2344B5BE204EA9FC00CEEB69 /* Gank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2344B5C1204EA9FC00CEEB69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2344B5C8204EA9FC00CEEB69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		2344B641204EAC4400CEEB69 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		2344B643204EAC4400CEEB69 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2344B653204EAC5100CEEB69 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		23677F142085CDE70068C3D5 /* CategoryViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewReactor.swift; sourceTree = "<group>"; };
 		2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVeiwCell.swift; sourceTree = "<group>"; };
 		2375FB1A206F3BEA003E924E /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
@@ -201,6 +201,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		2342257520B95EFA007EE60F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2342257620B95F19007EE60F /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2344B5B5204EA9FC00CEEB69 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +241,7 @@
 				23A91766205936690051622E /* ViewModel */,
 				2344B635204EAC3C00CEEB69 /* Models */,
 				2344B63E204EAC4400CEEB69 /* Networking */,
+				2342257520B95EFA007EE60F /* Service */,
 				2344B652204EAC5100CEEB69 /* Units */,
 				23318CBF204EFA8600F5D4F3 /* Helpers */,
 				2344B654204EAC5100CEEB69 /* Vender */,
@@ -418,8 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				23A91769205936BC0051622E /* GankNewsViewModel.swift */,
-				23677F142085CDE70068C3D5 /* CategoryViewReactor.swift */,
-				2322E80720947C9400911CED /* MainCategoryReactor.swift */,
+				2342257820B9685E007EE60F /* GankCategoryViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Models;
@@ -745,7 +753,6 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactorKit/ReactorKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
@@ -768,7 +775,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactorKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
@@ -839,11 +845,9 @@
 				2344B628204EAC2B00CEEB69 /* String+Extension.swift in Sources */,
 				23DCD1762061721300A3EA44 /* CategoryViewController.swift in Sources */,
 				23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */,
-				23677F152085CDE70068C3D5 /* CategoryViewReactor.swift in Sources */,
 				2337068020A064980047ED21 /* Refreshable.swift in Sources */,
 				23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */,
 				2344B626204EAC2B00CEEB69 /* UILable+Extension.swift in Sources */,
-				2322E80820947C9400911CED /* MainCategoryReactor.swift in Sources */,
 				23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */,
 				2344B62F204EAC2B00CEEB69 /* Binder+Extension.swift in Sources */,
 				2344B623204EAC2B00CEEB69 /* UIScrollView+Extension.swift in Sources */,
@@ -853,6 +857,7 @@
 				2344B627204EAC2B00CEEB69 /* FilterNil.swift in Sources */,
 				23DCD179206172F600A3EA44 /* MineViewController.swift in Sources */,
 				2344B5F9204EAB2900CEEB69 /* Constant.swift in Sources */,
+				2342257720B95F19007EE60F /* NetworkService.swift in Sources */,
 				2344B5F6204EAB2200CEEB69 /* BaseNavigationController.swift in Sources */,
 				2344B62E204EAC2B00CEEB69 /* Observable+Operators.swift in Sources */,
 				2344B622204EAC2B00CEEB69 /* ReuseCell.swift in Sources */,
@@ -860,6 +865,7 @@
 				2344B65D204EAC5100CEEB69 /* HUD.swift in Sources */,
 				2344B649204EAC4400CEEB69 /* Request.swift in Sources */,
 				2344B633204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift in Sources */,
+				2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */,
 				2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */,
 				2344B5F4204EAB2200CEEB69 /* BaseViewController.swift in Sources */,
 			);
