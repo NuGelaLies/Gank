@@ -22,7 +22,6 @@ target 'Gank' do
   pod 'SwiftMessages', '~> 4.1.0'
   pod 'NSObject+Rx', '~> 4.2.0'
   pod 'SnapKit', '~> 4.0.0'
-  pod 'ReactorKit', '~> 1.1.0'
 
   target 'GankTests' do
     inherit! :search_paths

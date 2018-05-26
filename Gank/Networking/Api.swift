@@ -25,7 +25,6 @@ final class Api: MoyaProvider<ApiConfig> {
     
     init() {
         let configuration = URLSessionConfiguration.default
-       // configuration.httpAdditionalHeaders = ["Content-Type" : "application/json","HDD-Client-Tag":"Driver","Device-Type": "iOS","HDD-Version":VERSIONNOW,"IMEI":NSUUID().uuidString]
         configuration.timeoutIntervalForRequest = 20
         configuration.timeoutIntervalForResource = 20
         configuration.requestCachePolicy = .useProtocolCachePolicy
@@ -37,8 +36,10 @@ final class Api: MoyaProvider<ApiConfig> {
     
     class func analysis(_ target: ApiConfig,
                         callbackQueue: DispatchQueue? = nil) -> Observable<Response> {
+        HUD.show()
         return Observable<Response>.create({ (observer) -> Disposable in
             let cancelTask = Api.shared.request(target, callbackQueue: callbackQueue, progress: nil, completion: { (results) in
+                HUD.dismiss()
                 switch results {
                 case .success(let obj):
                     guard ((200...209) ~= obj.statusCode) else {
@@ -49,14 +50,14 @@ final class Api: MoyaProvider<ApiConfig> {
                         observer.onError(TNError.noData)
                         return
                     }
-                    observer.onNext(obj)
-                    observer.onCompleted()
+                        observer.onNext(obj)
+                        observer.onCompleted()
                     #if DEBUG
-                    print(obj.messageLog)
+                        log.debug(obj.messageLog)
                     #endif
                 case .failure(let error):
                     #if DEBUG
-                    print(error)
+                        log.error(error)
                     #endif
                     observer.onError(error)
                 }

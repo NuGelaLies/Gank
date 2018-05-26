@@ -6,25 +6,15 @@
 //
 
 import UIKit
-import ReactorKit
 
 class BaseTabBarController: UITabBarController {
     //主页
-    lazy var main: MainViewController = {
-        let m = MainViewController()
-        m.reactor = MainCategoryReactor()
-        return m
-    }()
+    lazy var main = MainViewController()
     //分类
-    lazy var category: CategoryViewController = {
-        let cate = CategoryViewController()
-        cate.reactor = CategoryViewReactor()
-        return cate
-    }()
+    lazy var category = CategoryViewController()
+        
     //我的
-    lazy var mine: MineViewController = {
-        return MineViewController()
-    }()
+    lazy var mine = MineViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +30,7 @@ class BaseTabBarController: UITabBarController {
         Controller.tabBarItem.selectedImage = UIImage.init(named: s)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         Controller.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.colorWith(r: 201, g: 141, b: 44)], for: .selected)
         Controller.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor :Theme.UI.FontDarkGrayColor], for: .normal)
-        let navi = BaseNavigationController.init(rootViewController: Controller)
+        let navi = BaseNavigationController(rootViewController: Controller)
         self.addChildViewController(navi)
     }
     
