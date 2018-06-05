@@ -1,6 +1,6 @@
 //
-//  Refreshable.swift
-//  HDD_agent
+//  MJRefresh+Rx.swift
+//
 //
 //  Created by NuGelaLiee on 2018/4/24.
 //
