@@ -16,6 +16,7 @@ class CategoryViewController: BaseViewController {
     
     var viewModel: GankCategoryViewModel!
     
+    
     let segmentType = BehaviorRelay<GNCategory>(value: .Banifit)
     
     let items = BehaviorRelay<[TNNews]>(value: [])
@@ -36,12 +37,12 @@ class CategoryViewController: BaseViewController {
             .drive(items)
             .disposed(by: disposeBag)
         
-        viewModel.headerRefreshing
-            .drive(self.tableView.mj_header.rx.endRefreshing)
+        viewModel.headerRefreshing.asDriver()
+            .drive(tableView.mj_header.rx.endRefreshing)
             .disposed(by: disposeBag)
         
-        viewModel.footerRefreshing
-            .drive(self.tableView.mj_footer.rx.endRefreshing)
+        viewModel.footerRefreshing.asDriver()
+            .drive(tableView.mj_footer.rx.endRefreshing)
             .disposed(by: disposeBag)
         
         items.asDriver()
@@ -49,6 +50,10 @@ class CategoryViewController: BaseViewController {
                 row, model, cell in
                 cell.model = model
             }.disposed(by: disposeBag)
+
+    }
+    
+    override func setupRxConfig() {
         
         tableView.rx.modelSelected(TNNews.self)
             .subscribeNext { (model) in
@@ -56,10 +61,6 @@ class CategoryViewController: BaseViewController {
                 web.url = model.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
             }.disposed(by: disposeBag)
-    }
-    
-    override func setupRxConfig() {
-        
         
     }
     
@@ -70,10 +71,10 @@ class CategoryViewController: BaseViewController {
         }
         
         viewModel = GankCategoryViewModel(
-            input: (headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
-                    footerRefresh: self.tableView.mj_footer.rx.refreshing.asDriver(),
-                    category: .Banifit),
-            dependency: (service: NetworkService(), dispiseBag: disposeBag))
+                            input: (headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
+                                    footerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
+                                    category: .Banifit),
+                            dependency: (service: NetworkService(), disposeBag: self.disposeBag))
     }
 
     override func didReceiveMemoryWarning() {

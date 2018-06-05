@@ -36,10 +36,10 @@ final class Api: MoyaProvider<ApiConfig> {
     
     class func analysis(_ target: ApiConfig,
                         callbackQueue: DispatchQueue? = nil) -> Observable<Response> {
-        HUD.show()
+       // HUD.show()
         return Observable<Response>.create({ (observer) -> Disposable in
             let cancelTask = Api.shared.request(target, callbackQueue: callbackQueue, progress: nil, completion: { (results) in
-                HUD.dismiss()
+         //       HUD.dismiss()
                 switch results {
                 case .success(let obj):
                     guard ((200...209) ~= obj.statusCode) else {

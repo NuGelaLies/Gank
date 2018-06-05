@@ -13,7 +13,7 @@
 		23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC1204EFA8600F5D4F3 /* TNPreference.swift */; };
 		23318CC5204EFA8600F5D4F3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC2204EFA8600F5D4F3 /* Logger.swift */; };
 		23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */; };
-		2337068020A064980047ED21 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2337067F20A064980047ED21 /* Refreshable.swift */; };
+		2337068020A064980047ED21 /* MJRefresh+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2337067F20A064980047ED21 /* MJRefresh+Rx.swift */; };
 		23404ED720A991DE002B17BD /* GNNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23404ED620A991DD002B17BD /* GNNews.swift */; };
 		2342257720B95F19007EE60F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257620B95F19007EE60F /* NetworkService.swift */; };
 		2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257820B9685E007EE60F /* GankCategoryViewModel.swift */; };
@@ -94,7 +94,7 @@
 		23318CC1204EFA8600F5D4F3 /* TNPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPreference.swift; sourceTree = "<group>"; };
 		23318CC2204EFA8600F5D4F3 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
-		2337067F20A064980047ED21 /* Refreshable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
+		2337067F20A064980047ED21 /* MJRefresh+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Rx.swift"; sourceTree = "<group>"; };
 		23404ED620A991DD002B17BD /* GNNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNNews.swift; sourceTree = "<group>"; };
 		2342257620B95F19007EE60F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2342257820B9685E007EE60F /* GankCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankCategoryViewModel.swift; sourceTree = "<group>"; };
@@ -337,6 +337,7 @@
 		2344B611204EAC2B00CEEB69 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				2337067F20A064980047ED21 /* MJRefresh+Rx.swift */,
 				2344B612204EAC2B00CEEB69 /* Scheduler+Rx.swift */,
 				2344B613204EAC2B00CEEB69 /* Observable+Operators.swift */,
 				2344B614204EAC2B00CEEB69 /* Binder+Extension.swift */,
@@ -382,7 +383,6 @@
 		2344B652204EAC5100CEEB69 /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				2337067F20A064980047ED21 /* Refreshable.swift */,
 				2344B653204EAC5100CEEB69 /* HUD.swift */,
 			);
 			path = Units;
@@ -845,7 +845,7 @@
 				2344B628204EAC2B00CEEB69 /* String+Extension.swift in Sources */,
 				23DCD1762061721300A3EA44 /* CategoryViewController.swift in Sources */,
 				23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */,
-				2337068020A064980047ED21 /* Refreshable.swift in Sources */,
+				2337068020A064980047ED21 /* MJRefresh+Rx.swift in Sources */,
 				23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */,
 				2344B626204EAC2B00CEEB69 /* UILable+Extension.swift in Sources */,
 				23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */,

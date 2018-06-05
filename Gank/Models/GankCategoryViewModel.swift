@@ -13,20 +13,14 @@ import RxDataSources
 final class GankCategoryViewModel {
     
     let tableData = BehaviorRelay<[TNNews]>(value: [])
+        
+    var headerRefreshing: Driver<Bool>
     
-    var page = 1
-    
-    let category: BehaviorRelay<GNCategory>
-    
-    let headerRefreshing: Driver<Bool>
-    
-    let footerRefreshing: Driver<Bool>
-    
-    private let service: NetworkService
+    var footerRefreshing: Driver<Bool>
     
     init(
         input: (headerRefresh: Driver<Void>, footerRefresh: Driver<Void>, category: GNCategory),
-        dependency: (service: NetworkService, dispiseBag: DisposeBag)) {
+        dependency: (service: NetworkService, disposeBag: DisposeBag)) {
         
         let headerRefresh = input.headerRefresh
             .startWith(())
@@ -48,26 +42,22 @@ final class GankCategoryViewModel {
         }
         self.headerRefreshing = input.headerRefresh.map {_ in true}
         self.footerRefreshing = input.footerRefresh.map {_ in true}
-        self.service = dependency.service
-        self.category = BehaviorRelay(value: input.category)
         
         headerRefresh.asDriver()
             .driveNext { [weak vm = self] (items) in
                 vm?.tableData.accept(items)
-            }.disposed(by: dependency.dispiseBag)
+            }.disposed(by: dependency.disposeBag)
         
         footerRefresh.asDriver()
             .driveNext { [weak vm = self] (items) in
                 if let v = vm {
                     v.tableData.accept(v.tableData.value + items)
                 }
-            }.disposed(by: dependency.dispiseBag)
+            }.disposed(by: dependency.disposeBag)
     }
     
-    func getCategory(form category: GNCategory) -> SharedSequence<DriverSharingStrategy, [TNNews]> {
-            return service.getCategory(to: category)
-                      .catchOnEmpty {
-                        return Observable<[TNNews]>.empty()
-                    }.asDriver(onErrorDriveWith: Driver.empty())
-    }
+    static let empty = GankCategoryViewModel(
+        input: (headerRefresh: Driver.empty(), footerRefresh: Driver.empty(), category: .Banifit),
+        dependency: (service: NetworkService(), disposeBag: DisposeBag()))
+    
 }
