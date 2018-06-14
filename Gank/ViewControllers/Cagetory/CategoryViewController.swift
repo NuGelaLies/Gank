@@ -14,69 +14,60 @@ import RxDataSources
 class CategoryViewController: BaseViewController {
     let disposeBag = DisposeBag()
     
-    var viewModel: GankCategoryViewModel!
+    //var viewModel: GankCategoryViewModel!
     
+    let items = BehaviorRelay<[GNCategory]>(value: [])
     
-    let segmentType = BehaviorRelay<GNCategory>(value: .Banifit)
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    let items = BehaviorRelay<[TNNews]>(value: [])
-    lazy var tableView: UITableView = {
-        let tv = UITableView.init()
-        tv.tableFooterView = UIView()
-        tv.estimatedRowHeight = 300
-        tv.rowHeight = UITableViewAutomaticDimension
-        tv.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
-        tv.mj_header = MJRefreshStateHeader()
-        tv.mj_footer = MJRefreshAutoStateFooter()
-        tv.register(HomeVeiwCell.self)
-        return tv
-    }()
-    
-    override func bindViewModel() {
-        viewModel.tableData.asDriver()
-            .drive(items)
-            .disposed(by: disposeBag)
-        
-        viewModel.headerRefreshing.asDriver()
-            .drive(tableView.mj_header.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        viewModel.footerRefreshing.asDriver()
-            .drive(tableView.mj_footer.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        items.asDriver()
-            .drive(tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
-                row, model, cell in
-                cell.model = model
-            }.disposed(by: disposeBag)
-
-    }
+    lazy var caregorys: [GNCategory] = [.AllResouse,
+                                        .Android,
+                                        .Banifit,
+                                        .BlindCommend,
+                                        .ExtensionResource,
+                                        .iOS,
+                                        .RelaxVideo,
+                                        .WEB]
     
     override func setupRxConfig() {
         
-        tableView.rx.modelSelected(TNNews.self)
-            .subscribeNext { (model) in
-                let web = BaseWebViewController()
-                web.url = model.url ?? Constant.web.defaultWebSite
-                self.navigationController?.pushViewController(web, animated: true)
+        items.asDriver(onErrorJustReturn: [])
+            .drive(collectionView.rx.items(cellIdentifier: "CategoryViewCell", cellType: CategoryViewCell.self)) {
+                row, element , cell in
+                cell.textLabel.text = element.rawValue
+                cell.backgroundColor = Theme.UI.FontOrangerColor
             }.disposed(by: disposeBag)
+        
+        items.accept(caregorys)
+        
+        collectionView.rx.modelSelected(GNCategory.self)
+            .subscribeNext { [weak self] (type) in
+                guard let `self` = self else {return}
+                let list = ListViewController(category: type)
+                self.navigationController?.pushViewController(list, animated: true)
+        }.disposed(by: disposeBag)
+        
+        //        tableView.rx.modelSelected(TNNews.self)
+        //            .subscribeNext { (model) in
+        //                let web = BaseWebViewController()
+        //                web.url = model.url ?? Constant.web.defaultWebSite
+        //                self.navigationController?.pushViewController(web, animated: true)
+        //            }.disposed(by: disposeBag)
         
     }
     
     override func setupSubViews() {
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { (make) in
+        collectionView.registerNib(CategoryViewCell.self)
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
         
-        viewModel = GankCategoryViewModel(
-                            input: (headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
-                                    footerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
-                                    category: .Banifit),
-                            dependency: (service: NetworkService(), disposeBag: self.disposeBag))
+        
+              
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -84,4 +75,20 @@ class CategoryViewController: BaseViewController {
     
 }
 
+extension CategoryViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (Constant.UI.kScreenW - 30) / 2
+        
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+}
 

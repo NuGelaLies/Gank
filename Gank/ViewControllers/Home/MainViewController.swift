@@ -8,9 +8,10 @@
 import UIKit
 import RxSwift
 import RxDataSources
+import MJRefresh
 
 class MainViewController: BaseViewController {
-    let disposeBag = DisposeBag()
+    let Bag = DisposeBag()
     
     var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TNNews>>?
     lazy var tableView: UITableView = {
@@ -22,22 +23,49 @@ class MainViewController: BaseViewController {
         tv.rowHeight = UITableViewAutomaticDimension
         tv.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
         tv.register(HomeVeiwCell.self)
+        tv.mj_header = MJRefreshNormalHeader()
         tv.register(headerFooterViewClass: HomeHeaderFooterView.self)
         return tv
     }()
+    
+    var viewModel: GankNewsViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "干货集中营"
         
         
     }
-    
     override func setupSubViews() {
        
+        viewModel = GankNewsViewModel(
+            input:(headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
+                   disposeBag: Bag))
+        
         view.addSubview(tableView)
+        
+        tableView.rx.setDelegate(self).disposed(by: Bag)
+        
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
+        
+        
+    }
+    
+    override func setupRxConfig() {
+        dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, TNNews>>(configureCell: { (ds, tv, indexPath, element) -> UITableViewCell in
+            let cell = tv.dequeue(HomeVeiwCell.self)
+            cell.model = element
+            return cell
+        })
+        
+        viewModel.tableData.asDriver(onErrorJustReturn: [])
+            .drive(tableView.rx.items(dataSource: dataSource!))
+            .disposed(by: Bag)
+
+        viewModel.refreshing
+            .drive(tableView.mj_header.rx.endRefreshing)
+            .disposed(by: Bag)
     }
  
 }

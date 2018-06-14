@@ -18,6 +18,7 @@ enum GNCategory: String {
     case WEB = "前端"
     case BlindCommend = "瞎推荐"
     case AllResouse = "all"
+    case empty = "empty" //筛选
 }
 
 enum ApiConfig {

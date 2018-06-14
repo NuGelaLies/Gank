@@ -10,6 +10,25 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class GankNewsViewModel {
-   
+final class GankNewsViewModel {
+    let tableData = BehaviorRelay<[SectionModel<String, TNNews>]>(value: [])
+    
+    var refreshing: Driver<Bool>
+    
+    init(input: (headerRefresh: Driver<Void>, disposeBag: DisposeBag)) {
+        let header = input.headerRefresh
+            .startWith(())
+            .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, [SectionModel<String, TNNews>]> in
+                    return Service.shared.loadDatilyNews()
+                                .observeOn(MainScheduler.instance)
+                                .asDriver(onErrorJustReturn: [])
+                
+            }
+        
+        self.refreshing = header.map {_ in true}
+        
+        header.driveNext { [weak self] (items) in
+            self?.tableData.accept(items)
+            }.disposed(by: input.disposeBag)
+    }
 }
