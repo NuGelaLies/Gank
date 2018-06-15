@@ -51,8 +51,11 @@ class HomeVeiwCell: UITableViewCell {
     
     var model: TNNews? {
         didSet {
-           
-            self.dateLabel.text = self.model?.publishedAt
+            if let publishdAt = self.model?.publishedAt {
+                self.dateLabel.text = publishdAt.toTime()
+            } else {
+                self.dateLabel.text = ""
+            }
             self.contentLabel.text = self.model?.desc
             self.authorLabel.text = "via. \(self.model?.who ?? "机器人")"
         }

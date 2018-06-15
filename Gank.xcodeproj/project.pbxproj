@@ -55,6 +55,10 @@
 		2344B647204EAC4400CEEB69 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B641204EAC4400CEEB69 /* Api.swift */; };
 		2344B649204EAC4400CEEB69 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B643204EAC4400CEEB69 /* Request.swift */; };
 		2344B65D204EAC5100CEEB69 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B653204EAC5100CEEB69 /* HUD.swift */; };
+		236DA9BD20D353E40090C115 /* BanifitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DA9BB20D353E40090C115 /* BanifitViewController.swift */; };
+		236DA9BE20D353E40090C115 /* BanifitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236DA9BC20D353E40090C115 /* BanifitViewController.xib */; };
+		236DA9C120D355F30090C115 /* BanifitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DA9BF20D355F30090C115 /* BanifitViewCell.swift */; };
+		236DA9C220D355F30090C115 /* BanifitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236DA9C020D355F30090C115 /* BanifitViewCell.xib */; };
 		2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */; };
 		2375FB1B206F3BEA003E924E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1A206F3BEA003E924E /* Route.swift */; };
 		2375FB1D206F3F16003E924E /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */; };
@@ -147,6 +151,10 @@
 		2344B641204EAC4400CEEB69 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		2344B643204EAC4400CEEB69 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		2344B653204EAC5100CEEB69 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		236DA9BB20D353E40090C115 /* BanifitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanifitViewController.swift; sourceTree = "<group>"; };
+		236DA9BC20D353E40090C115 /* BanifitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanifitViewController.xib; sourceTree = "<group>"; };
+		236DA9BF20D355F30090C115 /* BanifitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanifitViewCell.swift; sourceTree = "<group>"; };
+		236DA9C020D355F30090C115 /* BanifitViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanifitViewCell.xib; sourceTree = "<group>"; };
 		2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVeiwCell.swift; sourceTree = "<group>"; };
 		2375FB1A206F3BEA003E924E /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
@@ -450,6 +458,8 @@
 			children = (
 				23B69B9E20D2E78800E8B19E /* CategoryViewCell.swift */,
 				23B69B9F20D2E78800E8B19E /* CategoryViewCell.xib */,
+				236DA9BF20D355F30090C115 /* BanifitViewCell.swift */,
+				236DA9C020D355F30090C115 /* BanifitViewCell.xib */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -467,6 +477,8 @@
 				23B69BAA20D2EE8B00E8B19E /* CategoryViewController.swift */,
 				23B69BAB20D2EE8B00E8B19E /* CategoryViewController.xib */,
 				23B69BAE20D2F16D00E8B19E /* ListViewController.swift */,
+				236DA9BB20D353E40090C115 /* BanifitViewController.swift */,
+				236DA9BC20D353E40090C115 /* BanifitViewController.xib */,
 			);
 			path = Cagetory;
 			sourceTree = "<group>";
@@ -627,7 +639,9 @@
 			files = (
 				23B69BAD20D2EE8B00E8B19E /* CategoryViewController.xib in Resources */,
 				23B69BA120D2E78800E8B19E /* CategoryViewCell.xib in Resources */,
+				236DA9BE20D353E40090C115 /* BanifitViewController.xib in Resources */,
 				2344B5CC204EA9FC00CEEB69 /* LaunchScreen.storyboard in Resources */,
+				236DA9C220D355F30090C115 /* BanifitViewCell.xib in Resources */,
 				2344B5C9204EA9FC00CEEB69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -855,8 +869,10 @@
 				2344B61E204EAC2B00CEEB69 /* UIImage+Extension.swift in Sources */,
 				2344B629204EAC2B00CEEB69 /* Foundation+Extension.swift in Sources */,
 				2375FB1B206F3BEA003E924E /* Route.swift in Sources */,
+				236DA9BD20D353E40090C115 /* BanifitViewController.swift in Sources */,
 				23318CC5204EFA8600F5D4F3 /* Logger.swift in Sources */,
 				2344B62A204EAC2B00CEEB69 /* EnumCollection.swift in Sources */,
+				236DA9C120D355F30090C115 /* BanifitViewCell.swift in Sources */,
 				2344B61A204EAC2B00CEEB69 /* UIAlertController+Extension.swift in Sources */,
 				23AE9ADE20872DF300D6A3AF /* Codable+Extension.swift in Sources */,
 				2323812D20663FC60024910D /* Response+Extension.swift in Sources */,

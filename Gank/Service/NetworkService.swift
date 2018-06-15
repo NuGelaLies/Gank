@@ -54,7 +54,7 @@ final class NetworkService: GankNetworkService {
             .asObservable()
     }
     
-    private let historySignal = Api.analysis(.getHistory())
+    private let historySignal = Api.analysis(.getHistory)
         .analysisJSON()
         .map{($0.arrayValue.first?.string ?? "").replacingOccurrences(of: "-", with: "/")}
     
@@ -88,6 +88,10 @@ final class NetworkService: GankNetworkService {
                     return zip(keys, leasts).compactMap {SectionModel(model: $0, items: $1)}
                 }).share(replay: 1)
         })
+    }
+    
+    func relaxReading() -> Observable<[Relaxs]> {
+        return Api.analysis(.getRelaxCategorys).mapModelArray(Relaxs.self).share(replay: 1)
     }
     
 }

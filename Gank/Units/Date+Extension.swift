@@ -23,7 +23,7 @@ extension String {
     }
     
     func toTime() -> String {
-        return toTime(dateFrom: "yyyy-MM-dd HH:mm:ss.SSS", dateTo: "yyyy EEE mm")
+        return toTime(dateFrom: "yyyy'-'MM'-'dd'T'HH':'mm':'ss.SSS'Z'", dateTo: "yyyy/MM/dd")
     }
     
 }
