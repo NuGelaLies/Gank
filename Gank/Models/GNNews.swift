@@ -18,3 +18,10 @@ struct TNNews: Codable {
     var used: Bool?
     var who: String?
 }
+
+struct Relaxs: Codable {
+    var _id: String?
+    var en_name: String?
+    var name: String?
+    var rank: Int?
+}

@@ -28,7 +28,7 @@ class MineViewController: BaseViewController {
     }
     
     override func setupSubViews() {
-        
+
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
@@ -40,14 +40,7 @@ class MineViewController: BaseViewController {
     }
     
     override func setupRxConfig() {
-        Api.analysis(.get(.AllResouse, 1))
-            .mapModelArray(TNNews.self)
-            .observeOn(MainScheduler.instance)
-            .asDriver(onErrorJustReturn: [])
-            .drive(tableView.rx.items(cellIdentifier: "UITableViewCell", cellType: UITableViewCell.self)) {
-                _, element, cell in
-                cell.textLabel?.text = element.desc
-            }.disposed(by: rx.disposeBag)
+       
     }
 
     override func didReceiveMemoryWarning() {

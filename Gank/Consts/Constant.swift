@@ -14,7 +14,7 @@ struct Constant {
     struct key {    }
     
     struct Const {
-       static let pageNum = 10
+       static let pageNum = 15
     }
     
     struct web {

@@ -27,7 +27,8 @@ class CategoryViewController: BaseViewController {
                                         .ExtensionResource,
                                         .iOS,
                                         .RelaxVideo,
-                                        .WEB]
+                                        .WEB,
+                                        .App]
     
     override func setupRxConfig() {
         
@@ -43,17 +44,18 @@ class CategoryViewController: BaseViewController {
         collectionView.rx.modelSelected(GNCategory.self)
             .subscribeNext { [weak self] (type) in
                 guard let `self` = self else {return}
-                let list = ListViewController(category: type)
-                self.navigationController?.pushViewController(list, animated: true)
+                switch type {
+                case .Banifit:
+                    let Banifit = BanifitViewController(category: type)
+                    Banifit.title = type.rawValue
+                    self.navigationController?.pushViewController(Banifit, animated: true)
+                default:
+                    let list = ListViewController(category: type)
+                    list.title = type.rawValue
+                    self.navigationController?.pushViewController(list, animated: true)
+                }
         }.disposed(by: disposeBag)
-        
-        //        tableView.rx.modelSelected(TNNews.self)
-        //            .subscribeNext { (model) in
-        //                let web = BaseWebViewController()
-        //                web.url = model.url ?? Constant.web.defaultWebSite
-        //                self.navigationController?.pushViewController(web, animated: true)
-        //            }.disposed(by: disposeBag)
-        
+
     }
     
     override func setupSubViews() {
@@ -77,18 +79,9 @@ class CategoryViewController: BaseViewController {
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (Constant.UI.kScreenW - 30) / 2
+        let width = (Constant.UI.kScreenW - 45) / 3
         
         return CGSize(width: width, height: width)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
-    }
-    
 }
 

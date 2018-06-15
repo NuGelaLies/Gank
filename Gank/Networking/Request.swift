@@ -10,6 +10,7 @@ import Foundation
 import Moya
 
 enum GNCategory: String {
+    case App = "App"
     case Android = "Android"
     case iOS = "iOS"
     case Banifit = "福利"
@@ -25,7 +26,7 @@ enum ApiConfig {
     /**所有干货，支持配图数据返回*/
     case get(GNCategory, Int)
     /**发过干货日期接口*/
-    case getHistory()
+    case getHistory
     /**特定日期网站数据*/
     case getDateNews(String)
     /**每日数据*/
@@ -36,6 +37,8 @@ enum ApiConfig {
     case getWitchDateNews(Int)
     /**搜索 API*/
     case getSearchCategory(GNCategory, Int)
+    /**闲读分类*/
+    case getRelaxCategorys
     /**添加分类*/
    // case addGank(postGoods)
 }
@@ -51,7 +54,7 @@ extension ApiConfig: TargetType {
         case .get(let c, let i):
             return "data/\(c.rawValue)/\(Constant.Const.pageNum)/\(i)"
         // 发过干货日期接口
-        case .getHistory():
+        case .getHistory:
             return "day/history"
         // 特定日期网站数据
         case .getDateNews(let s):
@@ -68,6 +71,8 @@ extension ApiConfig: TargetType {
         // 搜索 API
         case .getSearchCategory(let c, let p):
             return "search/query/listview/category/\(c.rawValue)/count/\(Constant.Const.pageNum)/page/\(p)"
+        case .getRelaxCategorys:
+            return "xiandu/categories"
 //        case .addGank(_):
 //            return "add2gank"
         }
