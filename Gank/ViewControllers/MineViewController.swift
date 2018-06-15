@@ -28,6 +28,7 @@ class MineViewController: BaseViewController {
     }
     
     override func setupSubViews() {
+
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
