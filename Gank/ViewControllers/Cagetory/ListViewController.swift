@@ -20,7 +20,7 @@ class ListViewController: BaseViewController {
     var categoryBelay: GNCategory!
     let items = BehaviorRelay<[TNNews]>(value: [])
     lazy var tableView: UITableView = {
-        let tv = UITableView.init()
+        let tv = UITableView()
         tv.tableFooterView = UIView()
         tv.estimatedRowHeight = 300
         tv.rowHeight = UITableViewAutomaticDimension
@@ -58,6 +58,15 @@ class ListViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func setupRxConfig() {
+        tableView.rx.modelSelected(TNNews.self)
+            .subscribeNext { (item) in
+                let web = BaseWebViewController()
+                web.url = item.url ?? Constant.web.defaultWebSite
+                self.navigationController?.pushViewController(web, animated: true)
+        }.disposed(by: disposeBag)
+    }
+    
     override func bindViewModel() {
         viewModel.tableData.asDriver()
             .drive(items)
@@ -68,13 +77,12 @@ class ListViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         viewModel.footerRefreshing.asDriver()
-            .debug()
             .drive(tableView.mj_footer.rx.endRefreshing)
             .disposed(by: disposeBag)
         
         items.asDriver()
             .drive(tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
-                row, model, cell in
+                _, model, cell in
                 cell.model = model
             }.disposed(by: disposeBag)
     }

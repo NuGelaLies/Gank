@@ -22,7 +22,8 @@ target 'Gank' do
   pod 'SwiftMessages', '~> 4.1.0'
   pod 'NSObject+Rx', '~> 4.2.0'
   pod 'SnapKit', '~> 4.0.0'
-
+  pod 'WCDB.swift', '~> 1.0.6.2'
+  
   target 'GankTests' do
     inherit! :search_paths
     # Pods for testing

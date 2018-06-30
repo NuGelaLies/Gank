@@ -48,8 +48,7 @@ class MainViewController: BaseViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        
+
     }
     
     override func setupRxConfig() {
@@ -58,6 +57,13 @@ class MainViewController: BaseViewController {
             cell.model = element
             return cell
         })
+        
+        tableView.rx.modelSelected(TNNews.self)
+            .subscribeNext { (item) in
+                let web = BaseWebViewController()
+                web.url = item.url ?? Constant.web.defaultWebSite
+                self.navigationController?.pushViewController(web, animated: true)
+        }.disposed(by: Bag)
         
         viewModel.tableData.asDriver(onErrorJustReturn: [])
             .drive(tableView.rx.items(dataSource: dataSource!))
