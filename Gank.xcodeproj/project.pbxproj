@@ -79,6 +79,11 @@
 		23DCD174206171F600A3EA44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCD173206171F600A3EA44 /* MainViewController.swift */; };
 		23DCD179206172F600A3EA44 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCD178206172F600A3EA44 /* MineViewController.swift */; };
 		23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A01120616C39000F68D8 /* BaseTabBarController.swift */; };
+		23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2EA20E7589E008843F2 /* GNDBManager.swift */; };
+		23ECA2EE20E762A2008843F2 /* GNDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2ED20E762A2008843F2 /* GNDataBase.swift */; };
+		23ECA2F020E763CF008843F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2EF20E763CF008843F2 /* User.swift */; };
+		23ECA2F220E765D8008843F2 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2F120E765D8008843F2 /* message.swift */; };
+		23ECA2F420E7698D008843F2 /* GNDBManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */; };
 		4F7DCED1C28702661AF9F251 /* Pods_GankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEB48BEBAB361534F8F9B9C /* Pods_GankUITests.framework */; };
 		C22D514B1BBD449FC86EF5A7 /* Pods_Gank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C4128443370D6051AB81D /* Pods_Gank.framework */; };
 		E80755DB0EB19686EFF34D3C /* Pods_GankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE13FFF90A8F927B06A74719 /* Pods_GankTests.framework */; };
@@ -180,6 +185,11 @@
 		23DCD173206171F600A3EA44 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23DCD178206172F600A3EA44 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		23E5A01120616C39000F68D8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		23ECA2EA20E7589E008843F2 /* GNDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDBManager.swift; sourceTree = "<group>"; };
+		23ECA2ED20E762A2008843F2 /* GNDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDataBase.swift; sourceTree = "<group>"; };
+		23ECA2EF20E763CF008843F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23ECA2F120E765D8008843F2 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
+		23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GNDBManager+Rx.swift"; sourceTree = "<group>"; };
 		26CDE5E3ABEE486960A8CB44 /* Pods-GankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GankUITests/Pods-GankUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EEB48BEBAB361534F8F9B9C /* Pods_GankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9A2FDE7CF46631C0C4F234 /* Pods-Gank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank/Pods-Gank.debug.xcconfig"; sourceTree = "<group>"; };
@@ -411,7 +421,7 @@
 		2344B652204EAC5100CEEB69 /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				2373CCE020E5C31F0077EBA6 /* DBManager.swift */,
+				23ECA2EC20E76254008843F2 /* WCDBManager */,
 				2344B653204EAC5100CEEB69 /* HUD.swift */,
 				23B69B9B20D2E18A00E8B19E /* Date+Extension.swift */,
 			);
@@ -512,6 +522,19 @@
 				23DCD178206172F600A3EA44 /* MineViewController.swift */,
 			);
 			name = Mine;
+			sourceTree = "<group>";
+		};
+		23ECA2EC20E76254008843F2 /* WCDBManager */ = {
+			isa = PBXGroup;
+			children = (
+				23ECA2EA20E7589E008843F2 /* GNDBManager.swift */,
+				2373CCE020E5C31F0077EBA6 /* DBManager.swift */,
+				23ECA2ED20E762A2008843F2 /* GNDataBase.swift */,
+				23ECA2EF20E763CF008843F2 /* User.swift */,
+				23ECA2F120E765D8008843F2 /* message.swift */,
+				23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */,
+			);
+			path = WCDBManager;
 			sourceTree = "<group>";
 		};
 		8B1C470337295A9EECE91FA8 /* Frameworks */ = {
@@ -873,6 +896,7 @@
 			files = (
 				2344B620204EAC2B00CEEB69 /* UIKit+Extension.swift in Sources */,
 				2344B61D204EAC2B00CEEB69 /* UIView+Extension.swift in Sources */,
+				23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */,
 				2344B645204EAC4400CEEB69 /* TNError.swift in Sources */,
 				2344B625204EAC2B00CEEB69 /* UITableView+Extension.swift in Sources */,
 				23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */,
@@ -900,13 +924,16 @@
 				23D45D7620A58E1F0018E35E /* Observable+Api.swift in Sources */,
 				2344B624204EAC2B00CEEB69 /* UITextField+Extension.swift in Sources */,
 				23A9176A205936BC0051622E /* GankNewsViewModel.swift in Sources */,
+				23ECA2F420E7698D008843F2 /* GNDBManager+Rx.swift in Sources */,
 				2344B61C204EAC2B00CEEB69 /* UIViewChain.swift in Sources */,
 				2375FB1D206F3F16003E924E /* Dictionary+Extension.swift in Sources */,
+				23ECA2F020E763CF008843F2 /* User.swift in Sources */,
 				23DCD174206171F600A3EA44 /* MainViewController.swift in Sources */,
 				2344B628204EAC2B00CEEB69 /* String+Extension.swift in Sources */,
 				23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */,
 				2337068020A064980047ED21 /* MJRefresh+Rx.swift in Sources */,
 				23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */,
+				23ECA2EE20E762A2008843F2 /* GNDataBase.swift in Sources */,
 				2344B626204EAC2B00CEEB69 /* UILable+Extension.swift in Sources */,
 				23B69BA020D2E78800E8B19E /* CategoryViewCell.swift in Sources */,
 				23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */,
@@ -930,6 +957,7 @@
 				2344B649204EAC4400CEEB69 /* Request.swift in Sources */,
 				2344B633204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift in Sources */,
 				2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */,
+				23ECA2F220E765D8008843F2 /* message.swift in Sources */,
 				230D300820E08B96002BCA22 /* ViewModelTypeable.swift in Sources */,
 				2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */,
 				2344B5F4204EAB2200CEEB69 /* BaseViewController.swift in Sources */,
