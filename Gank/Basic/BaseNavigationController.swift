@@ -30,6 +30,7 @@ class BaseNavigationController: UINavigationController {
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "nav_back"), action: {
                 self.popViewController(animated: true)
             })
+            viewController.navigationItem.leftBarButtonItem?.tintColor = .white
         }
         super.pushViewController(viewController, animated: animated)
     }

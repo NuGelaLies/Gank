@@ -11,6 +11,10 @@ import FSCalendar
 import RxCocoa
 import RxSwift
 
+protocol CalenderControllerDelegate: class {
+    func selectCalender(to date: String)
+}
+
 class CalenderController: BaseViewController {
     
     let disposeBag = DisposeBag()
@@ -19,12 +23,11 @@ class CalenderController: BaseViewController {
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var year: UILabel!
     fileprivate var historyNSDateGroups: [Date] = []
-    
+    weak var delegate: CalenderControllerDelegate?
     fileprivate let gregorian = Calendar(identifier: .gregorian)
 
     var viewModel: historyViewModel!
     
-    let goodsDate = BehaviorRelay<String>(value: "")
     override func viewDidLoad() {
         super.viewDidLoad()
         calendar.register(DIYCalendarCell.self, forCellReuseIdentifier: "DIYCalendarCell")
@@ -112,16 +115,20 @@ extension CalenderController: FSCalendarDelegate {
         //self.configureVisibleCells()
         if historyNSDateGroups.contains(date) {
             guard let time = date.detailTime else {return}
-            self.goodsDate.accept(time)
-            self.navigationController?.popViewController(animated: true)
+            if let delegate = delegate {
+                delegate.selectCalender(to: time)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date) {
         if historyNSDateGroups.contains(date) {
             guard let time = date.detailTime else {return}
-            self.goodsDate.accept(time)
-            self.navigationController?.popViewController(animated: true)
+            if let delegate = delegate {
+                delegate.selectCalender(to: time)
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
     

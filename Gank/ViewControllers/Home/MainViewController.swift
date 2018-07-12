@@ -48,15 +48,13 @@ class MainViewController: BaseViewController {
         }
 
         let calenderItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain) {
+            [weak self] in
             let Calendar = CalenderController()
             Calendar.title = "历史的年轮"
-            Calendar.goodsDate.asObservable()
-                .filter {!$0.isEmpty}
-                .concatMap {self.viewModel.getNews(to: $0)}
-                .bind(to: self.viewModel.tableData)
-                .disposed(by: Calendar.disposeBag)
-            self.navigationController?.pushViewController(Calendar, animated: true)
+            Calendar.delegate = self
+            self?.navigationController?.pushViewController(Calendar, animated: true)
         }
+        calenderItem.tintColor = .white
         self.navigationItem.rightBarButtonItem = calenderItem
     }
     
@@ -82,7 +80,6 @@ class MainViewController: BaseViewController {
             .drive(tableView.mj_header.rx.endRefreshing)
             .disposed(by: Bag)
     }
-    
 }
 
 extension MainViewController: UITableViewDelegate {
@@ -99,4 +96,12 @@ extension MainViewController: UITableViewDelegate {
     }
 }
 
+extension MainViewController: CalenderControllerDelegate {
+    
+    func selectCalender(to date: String) {
+        viewModel.getNews(to: date)
+            .bind(to: viewModel.tableData)
+            .disposed(by: Bag)
+    }
+}
 
