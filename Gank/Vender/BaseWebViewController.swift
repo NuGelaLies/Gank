@@ -22,7 +22,7 @@ class BaseWebViewController: BaseViewController {
     lazy var progressView: UIProgressView = {
         let progress = UIProgressView(progressViewStyle: .default)
         progress.frame = CGRect(x: 0, y: 64, width: Constant.UI.kScreenW, height: 5)
-        progress.progressTintColor = .green
+        progress.progressTintColor = Theme.Color.theme
         progress.trackTintColor = .clear
         return progress
     }()

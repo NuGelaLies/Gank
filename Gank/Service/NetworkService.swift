@@ -24,11 +24,36 @@ protocol GankNetworkService {
     
     func loadDatilyNews() -> Observable<[SectionModel<String, TNNews>]>
     
+    func historyDate() -> Observable<[String]>
+    
+    func getCategoryNews(to date: String) -> Observable<[SectionModel<String, TNNews>]>
+    
 }
 
 typealias Service = NetworkService
 
 final class NetworkService: GankNetworkService {
+    func getCategoryNews(to date: String) -> Observable<[SectionModel<String, TNNews>]> {
+        return Api.analysis(.getCategoryNew(date)).analysisJSON()
+            .map({ (obj) in
+                let j = obj.dictionaryObject! as NSDictionary
+                let keys = j.allKeys as! [String]
+                var leasts: [[TNNews]] = []
+                for (_ , jsons) in j {
+                    guard let data = try? JSONSerialization.data(withJSONObject: jsons, options: []),
+                        let news = try? JSONDecoder().decode([TNNews].self, from: data)
+                        else {return []}
+                    leasts.append(news)
+                }
+                return zip(keys, leasts).compactMap {SectionModel(model: $0, items: $1)}
+            }).share(replay: 1)
+    }
+    
+    func historyDate() -> Observable<[String]> {
+        return Api.analysis(.getHistory).analysisJSON()
+            .map {$0.arrayValue.map {$0.stringValue}}
+    }
+    
     
     static let shared = NetworkService()
     

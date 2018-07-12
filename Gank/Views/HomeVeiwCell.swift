@@ -102,9 +102,8 @@ class HomeVeiwCell: UITableViewCell {
             make.bottom.lessThanOrEqualToSuperview().offset(-10)
         }
         
-        let line = UIView().then { (make) in
-            make.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
-        }
+        let line = UIView()
+        line.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
         
         contentView.addSubview(line)
         line.snp.makeConstraints { [weak self] (make) in

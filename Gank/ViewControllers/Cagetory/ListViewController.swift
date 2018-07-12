@@ -16,7 +16,7 @@ class ListViewController: BaseViewController {
         super.viewDidLoad()
 
     }
-    var viewModel: GankCategoryViewModel!
+    lazy var viewModel = GNCategoryViewModel()
     var categoryBelay: GNCategory!
     let items = BehaviorRelay<[TNNews]>(value: [])
     lazy var tableView: UITableView = {
@@ -46,11 +46,8 @@ class ListViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
         
-        viewModel = GankCategoryViewModel(
-            input: (headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
-                    footerRefresh: self.tableView.mj_footer.rx.refreshing.asDriver(),
-                    category: self.categoryBelay),
-            disposeBag: self.disposeBag)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,20 +64,24 @@ class ListViewController: BaseViewController {
         }.disposed(by: disposeBag)
     }
     
-    override func bindViewModel() {
-        viewModel.tableData.asDriver()
-            .drive(items)
+    override func bindViewModels() {
+        let input = GNCategoryViewModel.Input(
+            headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
+            footerRefresh: self.tableView.mj_footer.rx.refreshing.asDriver(),
+            category: categoryBelay,
+            disposebag: disposeBag)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.headerRefreshing
+            .drive(self.tableView.mj_header.rx.endRefreshing)
             .disposed(by: disposeBag)
         
-        viewModel.headerRefreshing.asDriver()
-            .drive(tableView.mj_header.rx.endRefreshing)
+        output.footerRefreshing
+            .drive(self.tableView.mj_footer.rx.endRefreshing)
             .disposed(by: disposeBag)
         
-        viewModel.footerRefreshing.asDriver()
-            .drive(tableView.mj_footer.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        items.asDriver()
+        output.tableData.asDriver()
             .drive(tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
                 _, model, cell in
                 cell.model = model

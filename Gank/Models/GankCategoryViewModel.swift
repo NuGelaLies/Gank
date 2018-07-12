@@ -9,50 +9,54 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class GankCategoryViewModel {
+
+final class GNCategoryViewModel: ViewModelType {
     
-    let tableData = BehaviorRelay<[TNNews]>(value: [])
-        
-    let headerRefreshing: Driver<Bool>
+    struct Input {
+        let headerRefresh: Driver<Void>
+        let footerRefresh: Driver<Void>
+        let category: GNCategory
+        let disposebag: DisposeBag
+    }
     
-    let footerRefreshing: Driver<Bool>
+    struct Output {
+        let tableData: BehaviorRelay<[TNNews]>
+        let headerRefreshing: Driver<Bool>
+        let footerRefreshing: Driver<Bool>
+    }
     
-    init(
-        input: (headerRefresh: Driver<Void>, footerRefresh: Driver<Void>, category: GNCategory),
-        disposeBag: DisposeBag) {
-        
-        let headerRefresh = input.headerRefresh
+    private let tableData = BehaviorRelay<[TNNews]>(value: [])
+    
+    func transform(input: Input) -> Output {
+        let firstLoads = input.headerRefresh
             .startWith(())
-            .flatMapLatest { _ -> SharedSequence<DriverSharingStrategy, [TNNews]> in
-                return Service.shared.getCategory(to: input.category)
-                    .catchOnEmpty {
-                        return Observable<[TNNews]>.empty()
-                    }.asDriver(onErrorDriveWith: Driver.empty())
-                
-        }
-        let footerRefresh = input.footerRefresh
             .flatMapLatest { _ -> SharedSequence<DriverSharingStrategy, [TNNews]> in
                 return Service.shared.loadMore(to: input.category)
                     .catchOnEmpty {
                         return Observable<[TNNews]>.empty()
                     }.asDriver(onErrorDriveWith: Driver.empty())
-                
-                
         }
-        self.headerRefreshing = headerRefresh.map {_ in true}
-        self.footerRefreshing = footerRefresh.map {_ in true}
+        let loadMore = input.footerRefresh
+            .flatMapLatest { _ -> SharedSequence<DriverSharingStrategy, [TNNews]> in
+                return Service.shared.loadMore(to: input.category)
+                    .catchOnEmpty {
+                        return Observable<[TNNews]>.empty()
+                    }.asDriver(onErrorDriveWith: Driver.empty())
+        }
         
-        headerRefresh.asDriver()
-            .driveNext { [weak vm = self] (items) in
-                vm?.tableData.accept(items)
-            }.disposed(by: disposeBag)
         
-        footerRefresh.asDriver()
-            .driveNext { [weak vm = self] (items) in
-                if let v = vm {
-                    v.tableData.accept(v.tableData.value + items)
-                }
-            }.disposed(by: disposeBag)
+        firstLoads
+            .drive(tableData)
+            .disposed(by: input.disposebag)
+        
+        loadMore.driveNext { [weak base = self] (items) in
+            guard let `self` = base else {return}
+            self.tableData.accept(self.tableData.value + items)
+        }.disposed(by: input.disposebag)
+        
+        return Output(tableData: self.tableData,
+                      headerRefreshing: firstLoads.map {_ in true},
+                      footerRefreshing: loadMore.map {_ in true})
     }
     
 }

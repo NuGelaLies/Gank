@@ -15,7 +15,7 @@ class MainViewController: BaseViewController {
     
     var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TNNews>>?
     lazy var tableView: UITableView = {
-        let tv = UITableView.init(frame: .zero, style: .grouped)
+        let tv = UITableView.init(frame: .zero, style: .plain)
         tv.estimatedRowHeight = 300
         tv.separatorStyle = .none
         tv.estimatedSectionFooterHeight = 0
@@ -32,8 +32,6 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "干货集中营"
-        
-        
     }
     override func setupSubViews() {
        
@@ -49,6 +47,17 @@ class MainViewController: BaseViewController {
             make.edges.equalToSuperview()
         }
 
+        let calenderItem = UIBarButtonItem(image: UIImage(named: "calendar"), style: .plain) {
+            let Calendar = CalenderController()
+            Calendar.title = "历史的年轮"
+            Calendar.goodsDate.asObservable()
+                .filter {!$0.isEmpty}
+                .concatMap {self.viewModel.getNews(to: $0)}
+                .bind(to: self.viewModel.tableData)
+                .disposed(by: Calendar.disposeBag)
+            self.navigationController?.pushViewController(Calendar, animated: true)
+        }
+        self.navigationItem.rightBarButtonItem = calenderItem
     }
     
     override func setupRxConfig() {
@@ -73,7 +82,7 @@ class MainViewController: BaseViewController {
             .drive(tableView.mj_header.rx.endRefreshing)
             .disposed(by: Bag)
     }
- 
+    
 }
 
 extension MainViewController: UITableViewDelegate {
@@ -85,9 +94,9 @@ extension MainViewController: UITableViewDelegate {
         }
         return header
     }
-    
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 56
     }
 }
+
 

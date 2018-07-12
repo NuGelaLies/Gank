@@ -195,12 +195,8 @@ public extension UINib {
 
 public extension UIStoryboard {
     
-    func loadStoryBoard(storyBoard: String) -> UIStoryboard {
-        return UIStoryboard.init(name: storyBoard, bundle: nil)
-    }
-    
     /// load ViewController From StoryBoard
-    func instantiateViewController<T: UIViewController>(_: T.Type) -> T {
+    func instantiate<T: UIViewController>(_: T.Type) -> T {
         return instantiateViewController(withIdentifier: String(describing: T.self)) as? T ?? T()
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Then
 
 class BaseViewController: UIViewController {
     
@@ -24,7 +23,7 @@ class BaseViewController: UIViewController {
         
         setupRxConfig()
         
-        bindViewModel()
+        bindViewModels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +49,6 @@ class BaseViewController: UIViewController {
     
     func setupRxConfig() {}
     
-    func bindViewModel() {}
+    func bindViewModels() {}
     
 }

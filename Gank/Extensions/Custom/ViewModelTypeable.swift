@@ -9,20 +9,10 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-public protocol TrendingViewModelInputs {
-    var loadPageTrigger: Driver<Void> { get }
-    var loadNextPageTrigger: Driver<Void> { get }
-    func refresh()
-}
+public protocol ViewModelType {
+    associatedtype Input
+    associatedtype Output
 
-public protocol TrendingViewModelOutputs {
-    var isLoading: Driver<Bool> { get }
-    var moreLoading: Driver<Bool> { get }
-    var elements: BehaviorRelay<[AnyObject]> { get }
-    var selectedViewModel: Driver<AnyObject> { get }
-}
+    func transform(input: Input) -> Output
 
-public protocol TrendingViewModelType {
-    var inputs: TrendingViewModelInputs { get  }
-    var outputs: TrendingViewModelOutputs { get }
 }

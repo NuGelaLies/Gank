@@ -31,4 +31,9 @@ final class GankNewsViewModel {
             self?.tableData.accept(items)
             }.disposed(by: input.disposeBag)
     }
+    
+    func getNews(to date: String) -> Observable<[SectionModel<String, TNNews>]> {
+        return Service.shared.getCategoryNews(to: date)
+    }
+
 }

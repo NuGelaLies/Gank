@@ -36,7 +36,7 @@ class CategoryViewController: BaseViewController {
             .drive(collectionView.rx.items(cellIdentifier: "CategoryViewCell", cellType: CategoryViewCell.self)) {
                 row, element, cell in
                 cell.textLabel.text = element.rawValue
-                cell.backgroundColor = Theme.UI.FontOrangerColor
+                cell.backgroundColor = Theme.Color.FontOranger
             }.disposed(by: disposeBag)
         
         items.accept(caregorys)

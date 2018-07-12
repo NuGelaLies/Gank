@@ -10,12 +10,17 @@
 		230A6F8520878D3F004B6290 /* HomeHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */; };
 		230D300820E08B96002BCA22 /* ViewModelTypeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230D300720E08B96002BCA22 /* ViewModelTypeable.swift */; };
 		230D300A20E090AC002BCA22 /* BasicModelTypeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230D300920E090AC002BCA22 /* BasicModelTypeable.swift */; };
+		2311D0A220EA76AD006056EE /* CalenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311D0A020EA76AD006056EE /* CalenderController.swift */; };
+		2311D0A320EA76AD006056EE /* CalenderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2311D0A120EA76AD006056EE /* CalenderController.xib */; };
+		2311D0A620EA77D5006056EE /* GNDateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311D0A420EA77D5006056EE /* GNDateViewCell.swift */; };
+		231F778120EA07D800D5014C /* historyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F778020EA07D800D5014C /* historyViewModel.swift */; };
 		2323812D20663FC60024910D /* Response+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323812C20663FC60024910D /* Response+Extension.swift */; };
 		23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC0204EFA8600F5D4F3 /* GCD.swift */; };
 		23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC1204EFA8600F5D4F3 /* TNPreference.swift */; };
 		23318CC5204EFA8600F5D4F3 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC2204EFA8600F5D4F3 /* Logger.swift */; };
 		23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */; };
 		2337068020A064980047ED21 /* MJRefresh+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2337067F20A064980047ED21 /* MJRefresh+Rx.swift */; };
+		233B678120F44FD400C8DED7 /* Tools+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233B678020F44FD400C8DED7 /* Tools+Rx.swift */; };
 		23404ED720A991DE002B17BD /* GNNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23404ED620A991DD002B17BD /* GNNews.swift */; };
 		2342257720B95F19007EE60F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257620B95F19007EE60F /* NetworkService.swift */; };
 		2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2342257820B9685E007EE60F /* GankCategoryViewModel.swift */; };
@@ -110,12 +115,17 @@
 		230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderFooterView.swift; sourceTree = "<group>"; };
 		230D300720E08B96002BCA22 /* ViewModelTypeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTypeable.swift; sourceTree = "<group>"; };
 		230D300920E090AC002BCA22 /* BasicModelTypeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicModelTypeable.swift; sourceTree = "<group>"; };
+		2311D0A020EA76AD006056EE /* CalenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderController.swift; sourceTree = "<group>"; };
+		2311D0A120EA76AD006056EE /* CalenderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderController.xib; sourceTree = "<group>"; };
+		2311D0A420EA77D5006056EE /* GNDateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDateViewCell.swift; sourceTree = "<group>"; };
+		231F778020EA07D800D5014C /* historyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewModel.swift; sourceTree = "<group>"; };
 		2323812C20663FC60024910D /* Response+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Extension.swift"; sourceTree = "<group>"; };
 		23318CC0204EFA8600F5D4F3 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		23318CC1204EFA8600F5D4F3 /* TNPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPreference.swift; sourceTree = "<group>"; };
 		23318CC2204EFA8600F5D4F3 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWebViewController.swift; sourceTree = "<group>"; };
 		2337067F20A064980047ED21 /* MJRefresh+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Rx.swift"; sourceTree = "<group>"; };
+		233B678020F44FD400C8DED7 /* Tools+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tools+Rx.swift"; sourceTree = "<group>"; };
 		23404ED620A991DD002B17BD /* GNNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNNews.swift; sourceTree = "<group>"; };
 		2342257620B95F19007EE60F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2342257820B9685E007EE60F /* GankCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankCategoryViewModel.swift; sourceTree = "<group>"; };
@@ -383,6 +393,7 @@
 				2344B616204EAC2B00CEEB69 /* UIView+Rx.swift */,
 				2344B617204EAC2B00CEEB69 /* UIViewController+Rx.swift */,
 				2344B618204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift */,
+				233B678020F44FD400C8DED7 /* Tools+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -460,6 +471,7 @@
 			children = (
 				2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */,
 				230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */,
+				2311D0A420EA77D5006056EE /* GNDateViewCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 			children = (
 				23A91769205936BC0051622E /* GankNewsViewModel.swift */,
 				2342257820B9685E007EE60F /* GankCategoryViewModel.swift */,
+				231F778020EA07D800D5014C /* historyViewModel.swift */,
 			);
 			name = ViewModel;
 			path = Models;
@@ -512,6 +525,8 @@
 			isa = PBXGroup;
 			children = (
 				23DCD173206171F600A3EA44 /* MainViewController.swift */,
+				2311D0A020EA76AD006056EE /* CalenderController.swift */,
+				2311D0A120EA76AD006056EE /* CalenderController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -676,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23B69BAD20D2EE8B00E8B19E /* CategoryViewController.xib in Resources */,
+				2311D0A320EA76AD006056EE /* CalenderController.xib in Resources */,
 				23D2C6C420D9F4AB00185831 /* ArticleGankLoadingCell.xib in Resources */,
 				23B69BA120D2E78800E8B19E /* CategoryViewCell.xib in Resources */,
 				236DA9BE20D353E40090C115 /* BanifitViewController.xib in Resources */,
@@ -826,6 +842,7 @@
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -840,7 +857,6 @@
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/Then/Then.framework",
 				"${BUILT_PRODUCTS_DIR}/UIView+Positioning/UIView_Positioning.framework",
 				"${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework",
 			);
@@ -849,6 +865,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -863,7 +880,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Then.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Positioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDBSwift.framework",
 			);
@@ -911,7 +927,9 @@
 				2344B61E204EAC2B00CEEB69 /* UIImage+Extension.swift in Sources */,
 				2344B629204EAC2B00CEEB69 /* Foundation+Extension.swift in Sources */,
 				2375FB1B206F3BEA003E924E /* Route.swift in Sources */,
+				231F778120EA07D800D5014C /* historyViewModel.swift in Sources */,
 				236DA9BD20D353E40090C115 /* BanifitViewController.swift in Sources */,
+				2311D0A220EA76AD006056EE /* CalenderController.swift in Sources */,
 				23318CC5204EFA8600F5D4F3 /* Logger.swift in Sources */,
 				2344B62A204EAC2B00CEEB69 /* EnumCollection.swift in Sources */,
 				236DA9C120D355F30090C115 /* BanifitViewCell.swift in Sources */,
@@ -920,7 +938,9 @@
 				23AE9ADE20872DF300D6A3AF /* Codable+Extension.swift in Sources */,
 				2323812D20663FC60024910D /* Response+Extension.swift in Sources */,
 				2344B61B204EAC2B00CEEB69 /* UIColor+Extension.swift in Sources */,
+				233B678120F44FD400C8DED7 /* Tools+Rx.swift in Sources */,
 				2344B621204EAC2B00CEEB69 /* UIView+Border.swift in Sources */,
+				2311D0A620EA77D5006056EE /* GNDateViewCell.swift in Sources */,
 				23D45D7620A58E1F0018E35E /* Observable+Api.swift in Sources */,
 				2344B624204EAC2B00CEEB69 /* UITextField+Extension.swift in Sources */,
 				23A9176A205936BC0051622E /* GankNewsViewModel.swift in Sources */,

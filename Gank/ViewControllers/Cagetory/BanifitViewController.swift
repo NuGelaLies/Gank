@@ -15,7 +15,7 @@ class BanifitViewController: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categoryBelay: GNCategory!
-    var viewModel: GankCategoryViewModel!
+    lazy var viewModel = GNCategoryViewModel()
     
     //let items = BehaviorRelay<[TNNews]>(value: [])
     
@@ -40,12 +40,6 @@ class BanifitViewController: BaseViewController {
         
         collectionView.mj_header = MJRefreshStateHeader()
         collectionView.mj_footer = MJRefreshAutoStateFooter()
-        
-        viewModel = GankCategoryViewModel(
-            input: (headerRefresh: self.collectionView.mj_header.rx.refreshing.asDriver(),
-                    footerRefresh: self.collectionView.mj_footer.rx.refreshing.asDriver(),
-                    category: self.categoryBelay),
-            disposeBag: self.disposeBag)
     }
     
     override func setupRxConfig() {
@@ -57,22 +51,29 @@ class BanifitViewController: BaseViewController {
             }.disposed(by: disposeBag)
     }
     
-    override func bindViewModel() {
-        viewModel.tableData.asDriver()
+    override func bindViewModels() {
+        
+        let input = GNCategoryViewModel.Input(
+            headerRefresh: self.collectionView.mj_header.rx.refreshing.asDriver(),
+            footerRefresh: self.collectionView.mj_footer.rx.refreshing.asDriver(),
+            category: self.categoryBelay,
+            disposebag: disposeBag)
+        
+        let output = viewModel.transform(input: input)
+        
+        output.footerRefreshing
+            .drive(collectionView.mj_footer.rx.endRefreshing)
+            .disposed(by: disposeBag)
+        
+        output.headerRefreshing
+            .drive(collectionView.mj_header.rx.endRefreshing)
+            .disposed(by: disposeBag)
+        
+        output.tableData.asDriver()
             .drive(collectionView.rx.items(cellIdentifier: "BanifitViewCell", cellType: BanifitViewCell.self)) {
                 row, model, cell in
                 cell.model = model
             }.disposed(by: disposeBag)
-        
-        viewModel.headerRefreshing.asDriver()
-            .drive(collectionView.mj_header.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        viewModel.footerRefreshing.asDriver()
-            .drive(collectionView.mj_footer.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        
     }
 }
 

@@ -29,7 +29,7 @@ class BaseTabBarController: UITabBarController {
         Controller.tabBarItem.image = UIImage.init(named: n)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         Controller.tabBarItem.selectedImage = UIImage.init(named: s)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
         Controller.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.colorWith(r: 201, g: 141, b: 44)], for: .selected)
-        Controller.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor :Theme.UI.FontDarkGrayColor], for: .normal)
+        Controller.tabBarItem.setTitleTextAttributes([NSAttributedStringKey.foregroundColor :Theme.Color.FontDarkGray], for: .normal)
         let navi = BaseNavigationController(rootViewController: Controller)
         self.addChildViewController(navi)
     }

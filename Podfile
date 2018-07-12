@@ -11,7 +11,6 @@ target 'Gank' do
   pod 'Action', '~> 3.5.0'
   pod 'PKHUD'
   pod 'RxSwiftExt', '~> 3.1.0'
-  pod 'Then', '~> 2.3.0'
   pod 'RxDataSources', '~> 3.0.2'
   pod 'Moya/RxSwift'
   pod 'SwiftyJSON', '~> 4.0.0'
@@ -23,6 +22,7 @@ target 'Gank' do
   pod 'NSObject+Rx', '~> 4.2.0'
   pod 'SnapKit', '~> 4.0.0'
   pod 'WCDB.swift', '~> 1.0.6.2'
+  pod 'FSCalendar', '~> 2.7.9'
   
   target 'GankTests' do
     inherit! :search_paths

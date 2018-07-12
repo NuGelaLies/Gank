@@ -36,7 +36,7 @@ class MineViewController: BaseViewController {
         }
     }
     
-    override func bindViewModel() {
+    override func bindViewModels() {
         items.asDriver()
             .drive(tableView.rx.items(cellIdentifier: "UITableViewCell", cellType: UITableViewCell.self)) {
                 row , element , cell in

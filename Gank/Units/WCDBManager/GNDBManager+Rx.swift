@@ -10,7 +10,6 @@ import WCDBSwift
 import RxSwift
 import RxCocoa
 
-
 extension Reactive where Base: GNDBManager {
     
     func loadUser() -> Observable<[User]> {

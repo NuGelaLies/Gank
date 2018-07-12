@@ -1,15 +1,53 @@
 import UIKit
 
 extension String {
+    
+    public func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let date = dateFormatter.date(from: self) {
+            return date
+        } else {
+            return nil
+        }
+    }
+    
+    public func toDateOfSecond() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        if let date = dateFormatter.date(from: self) {
+            return date
+        } else {
+            return nil
+        }
+    }
+    
+    public func toGankUrl() -> String {
+        let stringArray = self.components(separatedBy: "/")
+        return String(format:"此网页由 %@ 提供", stringArray[2])
+        
+    }
+    
+    public var toTimeFormat: String {
+        var string = self.replacingOccurrences(of: "T", with: " ")
+        string = String(string[startIndex...string.index(startIndex, offsetBy: 18)])
+        return string
+    }
+}
+
+extension String {
 
     /// 转换成 Int， 如果转换失败，返回默认值
     func toInt(defaultValue: Int) -> Int {
         return Int(self) ?? defaultValue
     }
-
+    
     /// 转换成 Int
-    var int: Int? {
-        return Int(self)
+    var ints: Int? {
+        let numberFormatter = NumberFormatter()
+        return numberFormatter.number(from: self)?.intValue
     }
 
     /// 转换成 Float

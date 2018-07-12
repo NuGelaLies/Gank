@@ -78,7 +78,7 @@ extension Dictionary {
     
     /// `flatMap()` that returns `Dictionary`.
     public func flatMap<T, U>(_ transform: (Key, Value) throws -> (T, U)?) rethrows -> [T: U] where T: Hashable {
-        return Dictionary<T, U>(elements: try self.flatMap(transform))
+        return Dictionary<T, U>(elements: try self.compactMap(transform))
     }
     
     /// Returns a new dictionary by updating a value for key.
@@ -117,7 +117,7 @@ extension Optional: _OptionalType {
 extension Collection where Iterator.Element: _OptionalType {
     /// Returns nil-excluded array.
     public func filterNil() -> [Iterator.Element._Wrapped] {
-        return self.flatMap { $0.flatMap { $0 } }
+        return self.compactMap { $0.flatMap { $0 } }
     }
 }
 
