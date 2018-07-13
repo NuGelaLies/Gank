@@ -16,6 +16,5 @@ final class historyViewModel {
         Service.shared.historyDate()
             .bind(to: tableData)
             .disposed(by: dispose)
-        
     }
 }

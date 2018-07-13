@@ -20,7 +20,7 @@ final class GankNewsViewModel {
             .startWith(())
             .flatMapLatest { (_) -> SharedSequence<DriverSharingStrategy, [SectionModel<String, TNNews>]> in
                     return Service.shared.loadDatilyNews()
-                                .observeOn(MainScheduler.instance)
+                                .onMainScheduler()
                                 .asDriver(onErrorJustReturn: [])
                 
             }

@@ -13,6 +13,8 @@
 		2311D0A220EA76AD006056EE /* CalenderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311D0A020EA76AD006056EE /* CalenderController.swift */; };
 		2311D0A320EA76AD006056EE /* CalenderController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2311D0A120EA76AD006056EE /* CalenderController.xib */; };
 		2311D0A620EA77D5006056EE /* GNDateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2311D0A420EA77D5006056EE /* GNDateViewCell.swift */; };
+		231902E720F74B3C00AD7681 /* BanifitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231902E620F74B3C00AD7681 /* BanifitHeaderView.swift */; };
+		231902E920F74B4900AD7681 /* BanifitHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 231902E820F74B4900AD7681 /* BanifitHeaderView.xib */; };
 		231F778120EA07D800D5014C /* historyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F778020EA07D800D5014C /* historyViewModel.swift */; };
 		2323812D20663FC60024910D /* Response+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323812C20663FC60024910D /* Response+Extension.swift */; };
 		23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC0204EFA8600F5D4F3 /* GCD.swift */; };
@@ -118,6 +120,8 @@
 		2311D0A020EA76AD006056EE /* CalenderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderController.swift; sourceTree = "<group>"; };
 		2311D0A120EA76AD006056EE /* CalenderController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderController.xib; sourceTree = "<group>"; };
 		2311D0A420EA77D5006056EE /* GNDateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDateViewCell.swift; sourceTree = "<group>"; };
+		231902E620F74B3C00AD7681 /* BanifitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanifitHeaderView.swift; sourceTree = "<group>"; };
+		231902E820F74B4900AD7681 /* BanifitHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanifitHeaderView.xib; sourceTree = "<group>"; };
 		231F778020EA07D800D5014C /* historyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewModel.swift; sourceTree = "<group>"; };
 		2323812C20663FC60024910D /* Response+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Extension.swift"; sourceTree = "<group>"; };
 		23318CC0204EFA8600F5D4F3 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
@@ -472,6 +476,8 @@
 				2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */,
 				230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */,
 				2311D0A420EA77D5006056EE /* GNDateViewCell.swift */,
+				231902E620F74B3C00AD7681 /* BanifitHeaderView.swift */,
+				231902E820F74B4900AD7681 /* BanifitHeaderView.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -690,6 +696,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231902E920F74B4900AD7681 /* BanifitHeaderView.xib in Resources */,
 				23B69BAD20D2EE8B00E8B19E /* CategoryViewController.xib in Resources */,
 				2311D0A320EA76AD006056EE /* CalenderController.xib in Resources */,
 				23D2C6C420D9F4AB00185831 /* ArticleGankLoadingCell.xib in Resources */,
@@ -937,6 +944,7 @@
 				2344B61A204EAC2B00CEEB69 /* UIAlertController+Extension.swift in Sources */,
 				23AE9ADE20872DF300D6A3AF /* Codable+Extension.swift in Sources */,
 				2323812D20663FC60024910D /* Response+Extension.swift in Sources */,
+				231902E720F74B3C00AD7681 /* BanifitHeaderView.swift in Sources */,
 				2344B61B204EAC2B00CEEB69 /* UIColor+Extension.swift in Sources */,
 				233B678120F44FD400C8DED7 /* Tools+Rx.swift in Sources */,
 				2344B621204EAC2B00CEEB69 /* UIView+Border.swift in Sources */,

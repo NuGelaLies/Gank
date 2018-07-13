@@ -28,17 +28,24 @@ class MainViewController: BaseViewController {
         return tv
     }()
     
+    lazy var gankHeaderView: BanifitHeaderView = {
+        let benifit = UINib.viewFromNib(BanifitHeaderView.self)
+        benifit.frame = CGRect(x: 0, y: 0, width: Constant.UI.kScreenW, height: 235)
+        return benifit
+    }()
+    
     var viewModel: GankNewsViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "干货集中营"
+        
+        tableView.tableHeaderView = gankHeaderView
     }
     override func setupSubViews() {
        
         viewModel = GankNewsViewModel(
             input:(headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
                    disposeBag: Bag))
-        
         view.addSubview(tableView)
         
         tableView.rx.setDelegate(self).disposed(by: Bag)
@@ -73,8 +80,18 @@ class MainViewController: BaseViewController {
         }.disposed(by: Bag)
         
         viewModel.tableData.asDriver(onErrorJustReturn: [])
+            .map {$0.filter {$0.model != GNCategory.Banifit.rawValue}}
             .drive(tableView.rx.items(dataSource: dataSource!))
             .disposed(by: Bag)
+        
+        viewModel.tableData.asDriver(onErrorJustReturn: [])
+            .map {$0.filter {$0.model == GNCategory.Banifit.rawValue}}
+            .map {$0.first?.items.first}
+            .driveNext { (item) in
+                guard let item = item else {return}
+                let height = self.gankHeaderView.configModel(to: item)
+                self.gankHeaderView.frame.size.height = height
+            }.disposed(by: Bag)
 
         viewModel.refreshing
             .drive(tableView.mj_header.rx.endRefreshing)

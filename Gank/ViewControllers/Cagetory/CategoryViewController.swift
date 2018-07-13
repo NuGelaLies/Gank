@@ -79,7 +79,7 @@ class CategoryViewController: BaseViewController {
 
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (Constant.UI.kScreenW - 45) / 3
+        let width = (Constant.UI.kScreenW - 25) / 3
         
         return CGSize(width: width, height: width)
     }
