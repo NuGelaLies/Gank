@@ -37,10 +37,8 @@ class CalenderController: BaseViewController {
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
         calendar.today = nil // Hide the today circle
-        //calendar.swipeToChooseGesture.isEnabled = true
         calendar.headerHeight = 0
         calendar.weekdayHeight = 0
-        //calendar.calendarHeaderView
         let today = Date()
         year.text = today.year
         month.text = today.month?.toMonth()

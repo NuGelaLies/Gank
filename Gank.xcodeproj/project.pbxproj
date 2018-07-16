@@ -16,6 +16,11 @@
 		231902E720F74B3C00AD7681 /* BanifitHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231902E620F74B3C00AD7681 /* BanifitHeaderView.swift */; };
 		231902E920F74B4900AD7681 /* BanifitHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 231902E820F74B4900AD7681 /* BanifitHeaderView.xib */; };
 		231F778120EA07D800D5014C /* historyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231F778020EA07D800D5014C /* historyViewModel.swift */; };
+		2322AEDE20FC54C60089075D /* ShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322AEDC20FC54C60089075D /* ShimmerCell.swift */; };
+		2322AEDF20FC54C60089075D /* ShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2322AEDD20FC54C60089075D /* ShimmerCell.xib */; };
+		2322AEE220FC56B80089075D /* DateShimmerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322AEE020FC56B80089075D /* DateShimmerCell.swift */; };
+		2322AEE320FC56B80089075D /* DateShimmerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2322AEE120FC56B80089075D /* DateShimmerCell.xib */; };
+		2322AEE520FC74490089075D /* UIView+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322AEE420FC74490089075D /* UIView+Animation.swift */; };
 		2323812D20663FC60024910D /* Response+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323812C20663FC60024910D /* Response+Extension.swift */; };
 		23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC0204EFA8600F5D4F3 /* GCD.swift */; };
 		23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23318CC1204EFA8600F5D4F3 /* TNPreference.swift */; };
@@ -123,6 +128,11 @@
 		231902E620F74B3C00AD7681 /* BanifitHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanifitHeaderView.swift; sourceTree = "<group>"; };
 		231902E820F74B4900AD7681 /* BanifitHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanifitHeaderView.xib; sourceTree = "<group>"; };
 		231F778020EA07D800D5014C /* historyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewModel.swift; sourceTree = "<group>"; };
+		2322AEDC20FC54C60089075D /* ShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerCell.swift; sourceTree = "<group>"; };
+		2322AEDD20FC54C60089075D /* ShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShimmerCell.xib; sourceTree = "<group>"; };
+		2322AEE020FC56B80089075D /* DateShimmerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateShimmerCell.swift; sourceTree = "<group>"; };
+		2322AEE120FC56B80089075D /* DateShimmerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateShimmerCell.xib; sourceTree = "<group>"; };
+		2322AEE420FC74490089075D /* UIView+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animation.swift"; sourceTree = "<group>"; };
 		2323812C20663FC60024910D /* Response+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Extension.swift"; sourceTree = "<group>"; };
 		23318CC0204EFA8600F5D4F3 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		23318CC1204EFA8600F5D4F3 /* TNPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TNPreference.swift; sourceTree = "<group>"; };
@@ -382,6 +392,7 @@
 				2344B60F204EAC2B00CEEB69 /* String+PinYin.swift */,
 				2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */,
 				23AE9ADD20872DF300D6A3AF /* Codable+Extension.swift */,
+				2322AEE420FC74490089075D /* UIView+Animation.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -473,6 +484,8 @@
 		2371FDDB2050273A007663B6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2322AEE020FC56B80089075D /* DateShimmerCell.swift */,
+				2322AEE120FC56B80089075D /* DateShimmerCell.xib */,
 				2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */,
 				230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */,
 				2311D0A420EA77D5006056EE /* GNDateViewCell.swift */,
@@ -496,10 +509,14 @@
 		23B69B9D20D2E75D00E8B19E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				23D2C6C120D9F4AA00185831 /* ArticleGankLoadingCell.swift */,
+				23D2C6C220D9F4AA00185831 /* ArticleGankLoadingCell.xib */,
 				23B69B9E20D2E78800E8B19E /* CategoryViewCell.swift */,
 				23B69B9F20D2E78800E8B19E /* CategoryViewCell.xib */,
 				236DA9BF20D355F30090C115 /* BanifitViewCell.swift */,
 				236DA9C020D355F30090C115 /* BanifitViewCell.xib */,
+				2322AEDC20FC54C60089075D /* ShimmerCell.swift */,
+				2322AEDD20FC54C60089075D /* ShimmerCell.xib */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -516,8 +533,6 @@
 		23DCD171206171F600A3EA44 /* Cagetory */ = {
 			isa = PBXGroup;
 			children = (
-				23D2C6C120D9F4AA00185831 /* ArticleGankLoadingCell.swift */,
-				23D2C6C220D9F4AA00185831 /* ArticleGankLoadingCell.xib */,
 				23B69BAA20D2EE8B00E8B19E /* CategoryViewController.swift */,
 				23B69BAB20D2EE8B00E8B19E /* CategoryViewController.xib */,
 				23B69BAE20D2F16D00E8B19E /* ListViewController.swift */,
@@ -698,11 +713,13 @@
 			files = (
 				231902E920F74B4900AD7681 /* BanifitHeaderView.xib in Resources */,
 				23B69BAD20D2EE8B00E8B19E /* CategoryViewController.xib in Resources */,
+				2322AEE320FC56B80089075D /* DateShimmerCell.xib in Resources */,
 				2311D0A320EA76AD006056EE /* CalenderController.xib in Resources */,
 				23D2C6C420D9F4AB00185831 /* ArticleGankLoadingCell.xib in Resources */,
 				23B69BA120D2E78800E8B19E /* CategoryViewCell.xib in Resources */,
 				236DA9BE20D353E40090C115 /* BanifitViewController.xib in Resources */,
 				2344B5CC204EA9FC00CEEB69 /* LaunchScreen.storyboard in Resources */,
+				2322AEDF20FC54C60089075D /* ShimmerCell.xib in Resources */,
 				236DA9C220D355F30090C115 /* BanifitViewCell.xib in Resources */,
 				2344B5C9204EA9FC00CEEB69 /* Assets.xcassets in Resources */,
 			);
@@ -922,6 +939,7 @@
 				23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */,
 				2344B645204EAC4400CEEB69 /* TNError.swift in Sources */,
 				2344B625204EAC2B00CEEB69 /* UITableView+Extension.swift in Sources */,
+				2322AEE520FC74490089075D /* UIView+Animation.swift in Sources */,
 				23318CC3204EFA8600F5D4F3 /* GCD.swift in Sources */,
 				2344B61F204EAC2B00CEEB69 /* UIViewController+AlternateIcon.swift in Sources */,
 				2344B62D204EAC2B00CEEB69 /* Scheduler+Rx.swift in Sources */,
@@ -982,6 +1000,7 @@
 				2344B622204EAC2B00CEEB69 /* ReuseCell.swift in Sources */,
 				2344B62B204EAC2B00CEEB69 /* String+PinYin.swift in Sources */,
 				2344B65D204EAC5100CEEB69 /* HUD.swift in Sources */,
+				2322AEDE20FC54C60089075D /* ShimmerCell.swift in Sources */,
 				2344B649204EAC4400CEEB69 /* Request.swift in Sources */,
 				2344B633204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift in Sources */,
 				2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */,
@@ -989,6 +1008,7 @@
 				230D300820E08B96002BCA22 /* ViewModelTypeable.swift in Sources */,
 				2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */,
 				2344B5F4204EAB2200CEEB69 /* BaseViewController.swift in Sources */,
+				2322AEE220FC56B80089075D /* DateShimmerCell.swift in Sources */,
 				2373CCE120E5C31F0077EBA6 /* DBManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

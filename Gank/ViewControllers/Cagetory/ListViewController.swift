@@ -45,9 +45,7 @@ class ListViewController: BaseViewController {
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        
-        
-        
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,7 +55,8 @@ class ListViewController: BaseViewController {
     
     override func setupRxConfig() {
         tableView.rx.modelSelected(TNNews.self)
-            .subscribeNext { (item) in
+            .subscribeNext { [weak self] (item) in
+                guard let `self` = self else {return}
                 let web = BaseWebViewController()
                 web.url = item.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
@@ -66,19 +65,19 @@ class ListViewController: BaseViewController {
     
     override func bindViewModels() {
         let input = GNCategoryViewModel.Input(
-            headerRefresh: self.tableView.mj_header.rx.refreshing.asDriver(),
-            footerRefresh: self.tableView.mj_footer.rx.refreshing.asDriver(),
+            headerRefresh: tableView.mj_header.rx.refreshing.asDriver(),
+            footerRefresh: tableView.mj_footer.rx.refreshing.asDriver(),
             category: categoryBelay,
             disposebag: disposeBag)
         
         let output = viewModel.transform(input: input)
         
         output.headerRefreshing
-            .drive(self.tableView.mj_header.rx.endRefreshing)
+            .drive(tableView.mj_header.rx.endRefreshing)
             .disposed(by: disposeBag)
         
         output.footerRefreshing
-            .drive(self.tableView.mj_footer.rx.endRefreshing)
+            .drive(tableView.mj_footer.rx.endRefreshing)
             .disposed(by: disposeBag)
         
         output.tableData.asDriver()
@@ -87,4 +86,6 @@ class ListViewController: BaseViewController {
                 cell.model = model
             }.disposed(by: disposeBag)
     }
+    
+   
 }

@@ -51,4 +51,7 @@ class BaseViewController: UIViewController {
     
     func bindViewModels() {}
     
+    deinit {
+        log.verbose("\(self.className) dealoc")
+    }
 }

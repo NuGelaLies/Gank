@@ -23,6 +23,7 @@ class MainViewController: BaseViewController {
         tv.rowHeight = UITableViewAutomaticDimension
         tv.backgroundColor = UIColor.colorWith(r: 240, g: 240, b: 240)
         tv.register(HomeVeiwCell.self)
+        tv.registerNib(ShimmerCell.self)
         tv.mj_header = MJRefreshNormalHeader()
         tv.register(headerFooterViewClass: HomeHeaderFooterView.self)
         return tv
@@ -38,8 +39,7 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "干货集中营"
-        
-        tableView.tableHeaderView = gankHeaderView
+
     }
     override func setupSubViews() {
        
@@ -77,7 +77,7 @@ class MainViewController: BaseViewController {
                 let web = BaseWebViewController()
                 web.url = item.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
-        }.disposed(by: Bag)
+            }.disposed(by: Bag)
         
         viewModel.tableData.asDriver(onErrorJustReturn: [])
             .map {$0.filter {$0.model != GNCategory.Banifit.rawValue}}
@@ -91,6 +91,7 @@ class MainViewController: BaseViewController {
                 guard let item = item else {return}
                 let height = self.gankHeaderView.configModel(to: item)
                 self.gankHeaderView.frame.size.height = height
+                self.tableView.tableHeaderView = self.gankHeaderView
             }.disposed(by: Bag)
 
         viewModel.refreshing
