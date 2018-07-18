@@ -53,9 +53,7 @@ public extension Reactive where Base: UIViewController {
 public extension Reactive where Base: UIViewController {
     
     func push(_ viewController: @escaping @autoclosure () -> UIViewController,
-              animated: Bool = true)
-        -> Binder<Void>
-    {
+              animated: Bool = true) -> Binder<Void> {
         return Binder(base) { this, _ in
             this.navigationController?.pushViewController(viewController(), animated: animated)
         }
@@ -75,9 +73,7 @@ public extension Reactive where Base: UIViewController {
     
     func present(_ viewController: @escaping @autoclosure () -> UIViewController,
                  animated: Bool = true,
-                 completion: (() -> Void)? = nil)
-        -> Binder<Void>
-    {
+                 completion: (() -> Void)? = nil) -> Binder<Void> {
         return Binder(base) { this, _ in
             this.present(viewController(), animated: animated, completion: completion)
         }

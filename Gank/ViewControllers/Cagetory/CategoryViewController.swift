@@ -55,7 +55,8 @@ class CategoryViewController: BaseViewController {
                     self.navigationController?.pushViewController(list, animated: true)
                 }
         }.disposed(by: disposeBag)
-
+        
+        
     }
     
     override func setupSubViews() {

@@ -85,6 +85,8 @@
 		23B69BAC20D2EE8B00E8B19E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B69BAA20D2EE8B00E8B19E /* CategoryViewController.swift */; };
 		23B69BAD20D2EE8B00E8B19E /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23B69BAB20D2EE8B00E8B19E /* CategoryViewController.xib */; };
 		23B69BAF20D2F16D00E8B19E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B69BAE20D2F16D00E8B19E /* ListViewController.swift */; };
+		23C3806F20FF152F003894C3 /* UITableView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3806E20FF152F003894C3 /* UITableView+Rx.swift */; };
+		23C3807120FF1BFF003894C3 /* CleanJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C3807020FF1BFF003894C3 /* CleanJSON.swift */; };
 		23D2C6C320D9F4AB00185831 /* ArticleGankLoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D2C6C120D9F4AA00185831 /* ArticleGankLoadingCell.swift */; };
 		23D2C6C420D9F4AB00185831 /* ArticleGankLoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23D2C6C220D9F4AA00185831 /* ArticleGankLoadingCell.xib */; };
 		23D45D7620A58E1F0018E35E /* Observable+Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D45D7520A58E1F0018E35E /* Observable+Api.swift */; };
@@ -203,6 +205,8 @@
 		23B69BAA20D2EE8B00E8B19E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		23B69BAB20D2EE8B00E8B19E /* CategoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		23B69BAE20D2F16D00E8B19E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		23C3806E20FF152F003894C3 /* UITableView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Rx.swift"; sourceTree = "<group>"; };
+		23C3807020FF1BFF003894C3 /* CleanJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CleanJSON.swift; sourceTree = "<group>"; };
 		23D2C6C120D9F4AA00185831 /* ArticleGankLoadingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleGankLoadingCell.swift; sourceTree = "<group>"; };
 		23D2C6C220D9F4AA00185831 /* ArticleGankLoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleGankLoadingCell.xib; sourceTree = "<group>"; };
 		23D45D7520A58E1F0018E35E /* Observable+Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Api.swift"; sourceTree = "<group>"; };
@@ -335,6 +339,7 @@
 		2344B5F0204EAB2200CEEB69 /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */,
 				2344B5F1204EAB2200CEEB69 /* BaseViewController.swift */,
 				2344B5F3204EAB2200CEEB69 /* BaseNavigationController.swift */,
 				23E5A01120616C39000F68D8 /* BaseTabBarController.swift */,
@@ -409,6 +414,7 @@
 				2344B617204EAC2B00CEEB69 /* UIViewController+Rx.swift */,
 				2344B618204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift */,
 				233B678020F44FD400C8DED7 /* Tools+Rx.swift */,
+				23C3806E20FF152F003894C3 /* UITableView+Rx.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -457,7 +463,7 @@
 		2344B654204EAC5100CEEB69 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				23318CC8204F082C00F5D4F3 /* BaseWebViewController.swift */,
+				23C3807020FF1BFF003894C3 /* CleanJSON.swift */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -935,6 +941,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2344B620204EAC2B00CEEB69 /* UIKit+Extension.swift in Sources */,
+				23C3807120FF1BFF003894C3 /* CleanJSON.swift in Sources */,
 				2344B61D204EAC2B00CEEB69 /* UIView+Extension.swift in Sources */,
 				23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */,
 				2344B645204EAC4400CEEB69 /* TNError.swift in Sources */,
@@ -991,6 +998,7 @@
 				2344B627204EAC2B00CEEB69 /* FilterNil.swift in Sources */,
 				23DCD179206172F600A3EA44 /* MineViewController.swift in Sources */,
 				2344B5F9204EAB2900CEEB69 /* Constant.swift in Sources */,
+				23C3806F20FF152F003894C3 /* UITableView+Rx.swift in Sources */,
 				23D2C6C320D9F4AB00185831 /* ArticleGankLoadingCell.swift in Sources */,
 				2342257720B95F19007EE60F /* NetworkService.swift in Sources */,
 				23B69BAC20D2EE8B00E8B19E /* CategoryViewController.swift in Sources */,

@@ -31,7 +31,7 @@ final class GNCategoryViewModel: ViewModelType {
         let firstLoads = input.headerRefresh
             .startWith(())
             .flatMapLatest { _ -> SharedSequence<DriverSharingStrategy, [TNNews]> in
-                return Service.shared.loadMore(to: input.category)
+                return Service.shared.getCategory(to: input.category)
                     .catchOnEmpty {
                         return Observable<[TNNews]>.empty()
                     }.asDriver(onErrorDriveWith: Driver.empty())

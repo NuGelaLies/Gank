@@ -19,7 +19,6 @@ class GNDBManager: NSObject {
     final func initializa(){
         debugPrint("数据库表的初始化");
         do {
-            
             // 库创建表
             try GNDataBase.account.db.run(transaction: {
                 try GNDataBase.account.db.create(table: GNTableName.account.tableName, of: User.self)

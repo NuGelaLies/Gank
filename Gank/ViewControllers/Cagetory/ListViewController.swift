@@ -61,6 +61,10 @@ class ListViewController: BaseViewController {
                 web.url = item.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
         }.disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .bind(to: tableView.rx.deSelectRow())
+            .disposed(by: disposeBag)
     }
     
     override func bindViewModels() {

@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import RxDataSources
 import MJRefresh
 
@@ -73,11 +74,16 @@ class MainViewController: BaseViewController {
         })
         
         tableView.rx.modelSelected(TNNews.self)
-            .subscribeNext { (item) in
+            .map {
                 let web = BaseWebViewController()
-                web.url = item.url ?? Constant.web.defaultWebSite
-                self.navigationController?.pushViewController(web, animated: true)
-            }.disposed(by: Bag)
+                web.url = $0.url ?? Constant.web.defaultWebSite
+                return web
+            }
+            .bind(to: rx.push).disposed(by: Bag)
+        
+        tableView.rx.itemSelected
+            .bind(to: tableView.rx.deSelectRow())
+            .disposed(by: Bag)
         
         viewModel.tableData.asDriver(onErrorJustReturn: [])
             .map {$0.filter {$0.model != GNCategory.Banifit.rawValue}}
@@ -111,6 +117,14 @@ extension MainViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 56
+    }
+}
+
+extension Reactive where Base == MainViewController  {
+    var push: Binder<BaseViewController> {
+        return Binder(base) { vc, type in
+            vc.navigationController?.pushViewController(type, animated: true)
+        }
     }
 }
 

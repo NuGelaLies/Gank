@@ -11,7 +11,7 @@ struct TNNews: Codable {
     var _id : String?
     var desc: String?
     var createdAt: String?
-    var images: [String]?
+    var images: [URL]?
     var publishedAt: String?
     var source: String?
     var url: String?

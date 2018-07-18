@@ -62,9 +62,13 @@ final class NetworkService: GankNetworkService {
     func getCategory(to type: GNCategory) -> Observable<[TNNews]> {
         page = 1
         return Api.analysis(.get(type, page))
-                    .observeOn(MainScheduler.instance)
-                    .mapModelArray(TNNews.self).share(replay: 1)
-                    .asObservable()
+            .observeOn(MainScheduler.instance)
+            .mapModelArray(TNNews.self)
+            .doOnNext({ [weak self] (models) in
+                if models.count > 0 {
+                    self?.page = 2
+                }
+            }).shareOnce()
     }
 
     func loadMore(to type: GNCategory) -> Observable<[TNNews]> {
@@ -75,8 +79,7 @@ final class NetworkService: GankNetworkService {
                 if models.count > 0 {
                     self?.page += 1
                 }
-            }).share(replay: 1)
-            .asObservable()
+            }).shareOnce()
     }
     
     private let historySignal = Api.analysis(.getHistory)
@@ -84,17 +87,17 @@ final class NetworkService: GankNetworkService {
         .map{($0.arrayValue.first?.string ?? "").replacingOccurrences(of: "-", with: "/")}
     
     func loadAnasisData(to date: String) -> Observable<[TNNews]> {
-        return Api.analysis(.getDateNews(date)).mapModelArray(TNNews.self)
+        return Api.analysis(.getDateNews(date)).mapModelArray(TNNews.self).shareOnce()
     }
     
     func leastNew() -> Observable<[TNNews]> {
         return historySignal.flatMapLatest({ (date) in
-            return Api.analysis(.getDateNews(date)).mapModelArray(TNNews.self).share(replay: 1)
+            return Api.analysis(.getDateNews(date)).mapModelArray(TNNews.self).shareOnce()
         })
     }
     
     func loadContentDate() -> Observable<[TNNews]> {
-        return Api.analysis(.getWitchDateNews(2)).mapModelArray(TNNews.self).share(replay: 1)
+        return Api.analysis(.getWitchDateNews(2)).mapModelArray(TNNews.self).shareOnce()
     }
     
     func loadDatilyNews() -> Observable<[SectionModel<String, TNNews>]> {
@@ -111,12 +114,12 @@ final class NetworkService: GankNetworkService {
                         leasts.append(news)
                     }
                     return zip(keys, leasts).compactMap {SectionModel(model: $0, items: $1)}
-                }).share(replay: 1)
+                }).shareOnce()
         })
     }
     
     func relaxReading() -> Observable<[Relaxs]> {
-        return Api.analysis(.getRelaxCategorys).mapModelArray(Relaxs.self).share(replay: 1)
+        return Api.analysis(.getRelaxCategorys).mapModelArray(Relaxs.self).shareOnce()
     }
     
 }

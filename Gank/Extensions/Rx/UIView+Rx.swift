@@ -13,7 +13,3 @@ extension Reactive where Base: UIView {
         return longPressGesture.rx.event.asObservable()
     }
 }
-
-extension Reactive where Base: UIScrollView {
-    
-}
