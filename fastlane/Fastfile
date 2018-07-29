@@ -22,9 +22,14 @@ platform :ios do
     # carthage
   end
 
-  desc "Runs all the tests"
-  lane :test do
-    scan
+  desc "自动打包 测试包"
+  lane :debugGank do
+    
+    build_app(scheme: "Gank",
+            workspace: "Gank.xcworkspace",
+            export_method: "development",
+            output_directory: "./fastlane/package",
+            configuration:"Debug")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"

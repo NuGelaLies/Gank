@@ -24,7 +24,6 @@ extension Reactive where Base: MJRefreshComponent {
         return ControlEvent(events: source)
     }
     
-    
     var endRefreshing: Binder<Bool> {
         return Binder(self.base) { refresh, isEnd in
             if isEnd {
