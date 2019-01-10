@@ -10,9 +10,9 @@ import RxSwift
 import RxCocoa
 
 
-class MineViewController: BaseViewController {
+class MineViewController: UBaseViewController {
     
-    let items = BehaviorRelay<[User]>(value: [])
+    //let items = BehaviorRelay<[User]>(value: [])
     
     lazy var tableView: UITableView = {
         let tv = UITableView()

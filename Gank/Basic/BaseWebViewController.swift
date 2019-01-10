@@ -8,7 +8,7 @@
 import UIKit
 import WebKit
 
-class BaseWebViewController: BaseViewController {
+class BaseWebViewController: UBaseViewController {
 
     lazy var mainWebView: WKWebView = {
         let config = WKWebViewConfiguration()

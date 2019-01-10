@@ -16,11 +16,11 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios test
+### ios debugGank
 ```
-fastlane ios test
+fastlane ios debugGank
 ```
-Runs all the tests
+自动打包 测试包
 ### ios beta
 ```
 fastlane ios beta

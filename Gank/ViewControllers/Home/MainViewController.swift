@@ -11,7 +11,7 @@ import RxCocoa
 import RxDataSources
 import MJRefresh
 
-class MainViewController: BaseViewController {
+class MainViewController: UBaseViewController {
     let Bag = DisposeBag()
     
     var dataSource: RxTableViewSectionedReloadDataSource<SectionModel<String, TNNews>>?
@@ -121,7 +121,7 @@ extension MainViewController: UITableViewDelegate {
 }
 
 extension Reactive where Base == MainViewController  {
-    var push: Binder<BaseViewController> {
+    var push: Binder<UBaseViewController> {
         return Binder(base) { vc, type in
             vc.navigationController?.pushViewController(type, animated: true)
         }
@@ -131,9 +131,9 @@ extension Reactive where Base == MainViewController  {
 extension MainViewController: CalenderControllerDelegate {
     
     func selectCalender(to date: String) {
-        viewModel.getNews(to: date)
-            .bind(to: viewModel.tableData)
-            .disposed(by: Bag)
+//        viewModel.getNews(to: date)
+//            .bind(to: <#T##BehaviorRelay<[GankNewsSection]>#>)
+//            .disposed(by: Bag)
     }
 }
 

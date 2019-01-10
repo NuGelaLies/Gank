@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 
 class BanifitViewCell: UICollectionViewCell {
 
@@ -22,8 +22,6 @@ class BanifitViewCell: UICollectionViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.banifitVIew.alpha = 0
-        self.banifitVIew.image =  nil //Theme.UI.AppGreenBackagroundColor.toImage
     }
     
     func common() {
@@ -49,18 +47,10 @@ class BanifitViewCell: UICollectionViewCell {
             }
             self.author.text = "via. \(model.who ?? "Mr.R")"
             
-            guard let url = model.url else { return }
-            
-            ImageDownloader.default.downloadImage(with: URL(string: url)!, options: [.fromMemoryCacheOrRefresh]) { [weak self] (image, error, _, data) in
-                if error == nil {
-                    guard let image = image else {return}
-                    
-                    let idata = UIImageJPEGRepresentation(image, 0.1)
-                    
-                    self?.banifitVIew.image = UIImage(data: idata!)
-                    self?.banifitVIew.fadeIn()
-                }
+            if let url = model.url {
+                banifitVIew?.sd_setImage(with: URL(string: url), placeholderImage: UIImage(named: "meizi_loading"), options: .refreshCached)
             }
+            
             
         }
     }

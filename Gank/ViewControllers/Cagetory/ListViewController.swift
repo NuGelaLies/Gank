@@ -10,15 +10,13 @@ import RxCocoa
 import RxSwift
 import MJRefresh
 
-class ListViewController: BaseViewController {
-    let disposeBag = DisposeBag()
-    override func viewDidLoad() {
-        super.viewDidLoad()
+class ListViewController: UBaseViewController {
 
-    }
-    lazy var viewModel = GNCategoryViewModel()
     var categoryBelay: GNCategory!
     let items = BehaviorRelay<[TNNews]>(value: [])
+    var viewModel: GNCategoryViewModel!
+    
+    
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.tableFooterView = UIView()
@@ -31,13 +29,17 @@ class ListViewController: BaseViewController {
         return tv
     }()
     
-    init(category: GNCategory) {
-        super.init(nibName: nil, bundle: nil)
-        self.categoryBelay = category
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    convenience init(category: GNCategory) {
+        self.init(nibName: nil, bundle: nil)
+        self.categoryBelay = category
+        self.viewModel = GNCategoryViewModel(category: category)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.mj_header.beginRefreshing()
     }
     
     override func setupSubViews() {
@@ -60,35 +62,40 @@ class ListViewController: BaseViewController {
                 let web = BaseWebViewController()
                 web.url = item.url ?? Constant.web.defaultWebSite
                 self.navigationController?.pushViewController(web, animated: true)
-        }.disposed(by: disposeBag)
+        }.disposed(by: rx.disposeBag)
         
         tableView.rx.itemSelected
             .bind(to: tableView.rx.deSelectRow())
-            .disposed(by: disposeBag)
+            .disposed(by: rx.disposeBag)
     }
     
     override func bindViewModels() {
-        let input = GNCategoryViewModel.Input(
-            headerRefresh: tableView.mj_header.rx.refreshing.asDriver(),
-            footerRefresh: tableView.mj_footer.rx.refreshing.asDriver(),
-            category: categoryBelay,
-            disposebag: disposeBag)
         
-        let output = viewModel.transform(input: input)
+        let inputs = viewModel.inputs
+        let outputs = viewModel.outputs
         
-        output.headerRefreshing
-            .drive(tableView.mj_header.rx.endRefreshing)
-            .disposed(by: disposeBag)
+        tableView.mj_header.rx.refreshing
+            .bind(to: inputs.headerRefresh)
+            .disposed(by: rx.disposeBag)
         
-        output.footerRefreshing
-            .drive(tableView.mj_footer.rx.endRefreshing)
-            .disposed(by: disposeBag)
+        tableView.mj_footer.rx.refreshing
+            .bind(to: inputs.footerRefresh)
+            .disposed(by: rx.disposeBag)
         
-        output.tableData.asDriver()
-            .drive(tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
-                _, model, cell in
+        outputs.endHeaderRefresh
+            .bind(to: tableView.mj_header.rx.endRefreshing)
+            .disposed(by: rx.disposeBag)
+        
+        outputs.endFooterRefresh
+            .bind(to: tableView.mj_footer.rx.endRefreshing)
+            .disposed(by: rx.disposeBag)
+        
+        outputs.tableData
+            .bind(to: tableView.rx.items(cellIdentifier: "HomeVeiwCell", cellType: HomeVeiwCell.self)) {
+                row, model, cell in
                 cell.model = model
-            }.disposed(by: disposeBag)
+            }.disposed(by: rx.disposeBag)
+        
     }
     
    

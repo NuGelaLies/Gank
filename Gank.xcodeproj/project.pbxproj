@@ -34,8 +34,6 @@
 		2344B5C2204EA9FC00CEEB69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5C1204EA9FC00CEEB69 /* AppDelegate.swift */; };
 		2344B5C9204EA9FC00CEEB69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2344B5C8204EA9FC00CEEB69 /* Assets.xcassets */; };
 		2344B5CC204EA9FC00CEEB69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2344B5CA204EA9FC00CEEB69 /* LaunchScreen.storyboard */; };
-		2344B5D7204EA9FC00CEEB69 /* GankTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5D6204EA9FC00CEEB69 /* GankTests.swift */; };
-		2344B5E2204EA9FC00CEEB69 /* GankUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5E1204EA9FC00CEEB69 /* GankUITests.swift */; };
 		2344B5F4204EAB2200CEEB69 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5F1204EAB2200CEEB69 /* BaseViewController.swift */; };
 		2344B5F6204EAB2200CEEB69 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5F3204EAB2200CEEB69 /* BaseNavigationController.swift */; };
 		2344B5F9204EAB2900CEEB69 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2344B5F8204EAB2900CEEB69 /* Constant.swift */; };
@@ -74,7 +72,6 @@
 		236DA9C120D355F30090C115 /* BanifitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236DA9BF20D355F30090C115 /* BanifitViewCell.swift */; };
 		236DA9C220D355F30090C115 /* BanifitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 236DA9C020D355F30090C115 /* BanifitViewCell.xib */; };
 		2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */; };
-		2373CCE120E5C31F0077EBA6 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2373CCE020E5C31F0077EBA6 /* DBManager.swift */; };
 		2375FB1B206F3BEA003E924E /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1A206F3BEA003E924E /* Route.swift */; };
 		2375FB1D206F3F16003E924E /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */; };
 		23A9176A205936BC0051622E /* GankNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A91769205936BC0051622E /* GankNewsViewModel.swift */; };
@@ -93,32 +90,8 @@
 		23DCD174206171F600A3EA44 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCD173206171F600A3EA44 /* MainViewController.swift */; };
 		23DCD179206172F600A3EA44 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DCD178206172F600A3EA44 /* MineViewController.swift */; };
 		23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E5A01120616C39000F68D8 /* BaseTabBarController.swift */; };
-		23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2EA20E7589E008843F2 /* GNDBManager.swift */; };
-		23ECA2EE20E762A2008843F2 /* GNDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2ED20E762A2008843F2 /* GNDataBase.swift */; };
-		23ECA2F020E763CF008843F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2EF20E763CF008843F2 /* User.swift */; };
-		23ECA2F220E765D8008843F2 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2F120E765D8008843F2 /* message.swift */; };
-		23ECA2F420E7698D008843F2 /* GNDBManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */; };
-		4F7DCED1C28702661AF9F251 /* Pods_GankUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EEB48BEBAB361534F8F9B9C /* Pods_GankUITests.framework */; };
 		C22D514B1BBD449FC86EF5A7 /* Pods_Gank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8C4128443370D6051AB81D /* Pods_Gank.framework */; };
-		E80755DB0EB19686EFF34D3C /* Pods_GankTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE13FFF90A8F927B06A74719 /* Pods_GankTests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		2344B5D3204EA9FC00CEEB69 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2344B5B6204EA9FC00CEEB69 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2344B5BD204EA9FC00CEEB69;
-			remoteInfo = Gank;
-		};
-		2344B5DE204EA9FC00CEEB69 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2344B5B6204EA9FC00CEEB69 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2344B5BD204EA9FC00CEEB69;
-			remoteInfo = Gank;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		230A6F8420878D3F004B6290 /* HomeHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderFooterView.swift; sourceTree = "<group>"; };
@@ -150,12 +123,6 @@
 		2344B5C8204EA9FC00CEEB69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2344B5CB204EA9FC00CEEB69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2344B5CD204EA9FC00CEEB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2344B5D2204EA9FC00CEEB69 /* GankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2344B5D6204EA9FC00CEEB69 /* GankTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankTests.swift; sourceTree = "<group>"; };
-		2344B5D8204EA9FC00CEEB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2344B5DD204EA9FC00CEEB69 /* GankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2344B5E1204EA9FC00CEEB69 /* GankUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankUITests.swift; sourceTree = "<group>"; };
-		2344B5E3204EA9FC00CEEB69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2344B5F1204EAB2200CEEB69 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2344B5F3204EAB2200CEEB69 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		2344B5F8204EAB2900CEEB69 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -194,7 +161,6 @@
 		236DA9BF20D355F30090C115 /* BanifitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanifitViewCell.swift; sourceTree = "<group>"; };
 		236DA9C020D355F30090C115 /* BanifitViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BanifitViewCell.xib; sourceTree = "<group>"; };
 		2371FDE1205027C7007663B6 /* HomeVeiwCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVeiwCell.swift; sourceTree = "<group>"; };
-		2373CCE020E5C31F0077EBA6 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		2375FB1A206F3BEA003E924E /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		2375FB1C206F3F16003E924E /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		23A91769205936BC0051622E /* GankNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankNewsViewModel.swift; sourceTree = "<group>"; };
@@ -213,20 +179,9 @@
 		23DCD173206171F600A3EA44 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		23DCD178206172F600A3EA44 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		23E5A01120616C39000F68D8 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
-		23ECA2EA20E7589E008843F2 /* GNDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDBManager.swift; sourceTree = "<group>"; };
-		23ECA2ED20E762A2008843F2 /* GNDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GNDataBase.swift; sourceTree = "<group>"; };
-		23ECA2EF20E763CF008843F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		23ECA2F120E765D8008843F2 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = "<group>"; };
-		23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GNDBManager+Rx.swift"; sourceTree = "<group>"; };
-		26CDE5E3ABEE486960A8CB44 /* Pods-GankUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GankUITests/Pods-GankUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6EEB48BEBAB361534F8F9B9C /* Pods_GankUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F9A2FDE7CF46631C0C4F234 /* Pods-Gank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gank/Pods-Gank.debug.xcconfig"; sourceTree = "<group>"; };
 		AA8C4128443370D6051AB81D /* Pods_Gank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE5C97D4F300767FC3F33942 /* Pods-GankTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GankTests/Pods-GankTests.debug.xcconfig"; sourceTree = "<group>"; };
-		BE13FFF90A8F927B06A74719 /* Pods_GankTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE566816187B72839E99419C /* Pods-GankTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankTests/Pods-GankTests.release.xcconfig"; sourceTree = "<group>"; };
 		D4DEB0ECD69A5535AF07EB9F /* Pods-Gank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gank.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gank/Pods-Gank.release.xcconfig"; sourceTree = "<group>"; };
-		F10459B3E6C7DA412561E209 /* Pods-GankUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GankUITests/Pods-GankUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,22 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C22D514B1BBD449FC86EF5A7 /* Pods_Gank.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2344B5CF204EA9FC00CEEB69 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E80755DB0EB19686EFF34D3C /* Pods_GankTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2344B5DA204EA9FC00CEEB69 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4F7DCED1C28702661AF9F251 /* Pods_GankUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +219,6 @@
 			children = (
 				2344B5C0204EA9FC00CEEB69 /* Gank */,
 				2344B5CD204EA9FC00CEEB69 /* Info.plist */,
-				2344B5D5204EA9FC00CEEB69 /* GankTests */,
-				2344B5E0204EA9FC00CEEB69 /* GankUITests */,
 				2344B5BF204EA9FC00CEEB69 /* Products */,
 				E19D6B10AE3C167DFED83B70 /* Pods */,
 				8B1C470337295A9EECE91FA8 /* Frameworks */,
@@ -292,8 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				2344B5BE204EA9FC00CEEB69 /* Gank.app */,
-				2344B5D2204EA9FC00CEEB69 /* GankTests.xctest */,
-				2344B5DD204EA9FC00CEEB69 /* GankUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,24 +251,6 @@
 				235694E12063BEB1005CEE5F /* App */,
 			);
 			path = Gank;
-			sourceTree = "<group>";
-		};
-		2344B5D5204EA9FC00CEEB69 /* GankTests */ = {
-			isa = PBXGroup;
-			children = (
-				2344B5D6204EA9FC00CEEB69 /* GankTests.swift */,
-				2344B5D8204EA9FC00CEEB69 /* Info.plist */,
-			);
-			path = GankTests;
-			sourceTree = "<group>";
-		};
-		2344B5E0204EA9FC00CEEB69 /* GankUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2344B5E1204EA9FC00CEEB69 /* GankUITests.swift */,
-				2344B5E3204EA9FC00CEEB69 /* Info.plist */,
-			);
-			path = GankUITests;
 			sourceTree = "<group>";
 		};
 		2344B5F0204EAB2200CEEB69 /* Basic */ = {
@@ -453,7 +370,6 @@
 		2344B652204EAC5100CEEB69 /* Units */ = {
 			isa = PBXGroup;
 			children = (
-				23ECA2EC20E76254008843F2 /* WCDBManager */,
 				2344B653204EAC5100CEEB69 /* HUD.swift */,
 				23B69B9B20D2E18A00E8B19E /* Date+Extension.swift */,
 			);
@@ -566,25 +482,10 @@
 			name = Mine;
 			sourceTree = "<group>";
 		};
-		23ECA2EC20E76254008843F2 /* WCDBManager */ = {
-			isa = PBXGroup;
-			children = (
-				23ECA2EA20E7589E008843F2 /* GNDBManager.swift */,
-				2373CCE020E5C31F0077EBA6 /* DBManager.swift */,
-				23ECA2ED20E762A2008843F2 /* GNDataBase.swift */,
-				23ECA2EF20E763CF008843F2 /* User.swift */,
-				23ECA2F120E765D8008843F2 /* message.swift */,
-				23ECA2F320E7698D008843F2 /* GNDBManager+Rx.swift */,
-			);
-			path = WCDBManager;
-			sourceTree = "<group>";
-		};
 		8B1C470337295A9EECE91FA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				AA8C4128443370D6051AB81D /* Pods_Gank.framework */,
-				BE13FFF90A8F927B06A74719 /* Pods_GankTests.framework */,
-				6EEB48BEBAB361534F8F9B9C /* Pods_GankUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -594,10 +495,6 @@
 			children = (
 				7F9A2FDE7CF46631C0C4F234 /* Pods-Gank.debug.xcconfig */,
 				D4DEB0ECD69A5535AF07EB9F /* Pods-Gank.release.xcconfig */,
-				AE5C97D4F300767FC3F33942 /* Pods-GankTests.debug.xcconfig */,
-				BE566816187B72839E99419C /* Pods-GankTests.release.xcconfig */,
-				26CDE5E3ABEE486960A8CB44 /* Pods-GankUITests.debug.xcconfig */,
-				F10459B3E6C7DA412561E209 /* Pods-GankUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -614,7 +511,6 @@
 				2344B5BB204EA9FC00CEEB69 /* Frameworks */,
 				2344B5BC204EA9FC00CEEB69 /* Resources */,
 				DEDE11CDB4F6F93C710F8D98 /* [CP] Embed Pods Frameworks */,
-				632D45957DCAF51BDB6FCEA6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -624,48 +520,6 @@
 			productName = Gank;
 			productReference = 2344B5BE204EA9FC00CEEB69 /* Gank.app */;
 			productType = "com.apple.product-type.application";
-		};
-		2344B5D1204EA9FC00CEEB69 /* GankTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2344B5E9204EA9FC00CEEB69 /* Build configuration list for PBXNativeTarget "GankTests" */;
-			buildPhases = (
-				4115C3CC99BE17A274A8FAE5 /* [CP] Check Pods Manifest.lock */,
-				2344B5CE204EA9FC00CEEB69 /* Sources */,
-				2344B5CF204EA9FC00CEEB69 /* Frameworks */,
-				2344B5D0204EA9FC00CEEB69 /* Resources */,
-				D612EA2E91A2E924C4B87ECD /* [CP] Embed Pods Frameworks */,
-				B31EA1FADA2A76FE22436BE4 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2344B5D4204EA9FC00CEEB69 /* PBXTargetDependency */,
-			);
-			name = GankTests;
-			productName = GankTests;
-			productReference = 2344B5D2204EA9FC00CEEB69 /* GankTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2344B5DC204EA9FC00CEEB69 /* GankUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2344B5EC204EA9FC00CEEB69 /* Build configuration list for PBXNativeTarget "GankUITests" */;
-			buildPhases = (
-				724E5337F010070454D14203 /* [CP] Check Pods Manifest.lock */,
-				2344B5D9204EA9FC00CEEB69 /* Sources */,
-				2344B5DA204EA9FC00CEEB69 /* Frameworks */,
-				2344B5DB204EA9FC00CEEB69 /* Resources */,
-				4D6DCBD099667C2123D4C92D /* [CP] Embed Pods Frameworks */,
-				E95E2EF75BB4ED4D6B995CF1 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2344B5DF204EA9FC00CEEB69 /* PBXTargetDependency */,
-			);
-			name = GankUITests;
-			productName = GankUITests;
-			productReference = 2344B5DD204EA9FC00CEEB69 /* GankUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -678,17 +532,7 @@
 				TargetAttributes = {
 					2344B5BD204EA9FC00CEEB69 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
-					};
-					2344B5D1204EA9FC00CEEB69 = {
-						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
-						TestTargetID = 2344B5BD204EA9FC00CEEB69;
-					};
-					2344B5DC204EA9FC00CEEB69 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 2344B5BD204EA9FC00CEEB69;
 					};
 				};
 			};
@@ -706,8 +550,6 @@
 			projectRoot = "";
 			targets = (
 				2344B5BD204EA9FC00CEEB69 /* Gank */,
-				2344B5D1204EA9FC00CEEB69 /* GankTests */,
-				2344B5DC204EA9FC00CEEB69 /* GankUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -731,71 +573,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2344B5D0204EA9FC00CEEB69 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2344B5DB204EA9FC00CEEB69 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4115C3CC99BE17A274A8FAE5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GankTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D6DCBD099667C2123D4C92D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankUITests/Pods-GankUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		632D45957DCAF51BDB6FCEA6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gank/Pods-Gank-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6F712F2AA8D32966DD3A4207 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,81 +594,33 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		724E5337F010070454D14203 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GankUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B31EA1FADA2A76FE22436BE4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankTests/Pods-GankTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D612EA2E91A2E924C4B87ECD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankTests/Pods-GankTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		DEDE11CDB4F6F93C710F8D98 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Gank/Pods-Gank-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Gank/Pods-Gank-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxOptional/RxOptional.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/UIView+Positioning/UIView_Positioning.framework",
-				"${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -896,41 +628,26 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxOptional.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIView_Positioning.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDBSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gank/Pods-Gank-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E95E2EF75BB4ED4D6B995CF1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GankUITests/Pods-GankUITests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Gank/Pods-Gank-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -943,7 +660,6 @@
 				2344B620204EAC2B00CEEB69 /* UIKit+Extension.swift in Sources */,
 				23C3807120FF1BFF003894C3 /* CleanJSON.swift in Sources */,
 				2344B61D204EAC2B00CEEB69 /* UIView+Extension.swift in Sources */,
-				23ECA2EB20E7589E008843F2 /* GNDBManager.swift in Sources */,
 				2344B645204EAC4400CEEB69 /* TNError.swift in Sources */,
 				2344B625204EAC2B00CEEB69 /* UITableView+Extension.swift in Sources */,
 				2322AEE520FC74490089075D /* UIView+Animation.swift in Sources */,
@@ -977,16 +693,13 @@
 				23D45D7620A58E1F0018E35E /* Observable+Api.swift in Sources */,
 				2344B624204EAC2B00CEEB69 /* UITextField+Extension.swift in Sources */,
 				23A9176A205936BC0051622E /* GankNewsViewModel.swift in Sources */,
-				23ECA2F420E7698D008843F2 /* GNDBManager+Rx.swift in Sources */,
 				2344B61C204EAC2B00CEEB69 /* UIViewChain.swift in Sources */,
 				2375FB1D206F3F16003E924E /* Dictionary+Extension.swift in Sources */,
-				23ECA2F020E763CF008843F2 /* User.swift in Sources */,
 				23DCD174206171F600A3EA44 /* MainViewController.swift in Sources */,
 				2344B628204EAC2B00CEEB69 /* String+Extension.swift in Sources */,
 				23318CC9204F082C00F5D4F3 /* BaseWebViewController.swift in Sources */,
 				2337068020A064980047ED21 /* MJRefresh+Rx.swift in Sources */,
 				23318CC4204EFA8600F5D4F3 /* TNPreference.swift in Sources */,
-				23ECA2EE20E762A2008843F2 /* GNDataBase.swift in Sources */,
 				2344B626204EAC2B00CEEB69 /* UILable+Extension.swift in Sources */,
 				23B69BA020D2E78800E8B19E /* CategoryViewCell.swift in Sources */,
 				23E5A01220616C39000F68D8 /* BaseTabBarController.swift in Sources */,
@@ -1012,45 +725,14 @@
 				2344B649204EAC4400CEEB69 /* Request.swift in Sources */,
 				2344B633204EAC2B00CEEB69 /* UIBarButtonItem+ClosureAction.swift in Sources */,
 				2342257920B9685E007EE60F /* GankCategoryViewModel.swift in Sources */,
-				23ECA2F220E765D8008843F2 /* message.swift in Sources */,
 				230D300820E08B96002BCA22 /* ViewModelTypeable.swift in Sources */,
 				2371FDE2205027C7007663B6 /* HomeVeiwCell.swift in Sources */,
 				2344B5F4204EAB2200CEEB69 /* BaseViewController.swift in Sources */,
 				2322AEE220FC56B80089075D /* DateShimmerCell.swift in Sources */,
-				2373CCE120E5C31F0077EBA6 /* DBManager.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2344B5CE204EA9FC00CEEB69 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2344B5D7204EA9FC00CEEB69 /* GankTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2344B5D9204EA9FC00CEEB69 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2344B5E2204EA9FC00CEEB69 /* GankUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2344B5D4204EA9FC00CEEB69 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2344B5BD204EA9FC00CEEB69 /* Gank */;
-			targetProxy = 2344B5D3204EA9FC00CEEB69 /* PBXContainerItemProxy */;
-		};
-		2344B5DF204EA9FC00CEEB69 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2344B5BD204EA9FC00CEEB69 /* Gank */;
-			targetProxy = 2344B5DE204EA9FC00CEEB69 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2344B5CA204EA9FC00CEEB69 /* LaunchScreen.storyboard */ = {
@@ -1176,16 +858,16 @@
 			baseConfigurationReference = 7F9A2FDE7CF46631C0C4F234 /* Pods-Gank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TV9WK3UAR6;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxTodayNews.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kio.ganking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f8fb158d-9105-4d02-b273-084a97cedecb";
-				PROVISIONING_PROFILE_SPECIFIER = RxTodayNews_Dev_Cer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1194,81 +876,16 @@
 			baseConfigurationReference = D4DEB0ECD69A5535AF07EB9F /* Pods-Gank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TV9WK3UAR6;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxTodayNews.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kio.ganking;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2344B5EA204EA9FC00CEEB69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE5C97D4F300767FC3F33942 /* Pods-GankTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GankTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxGank.parctise.GankTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.app/Gank";
-			};
-			name = Debug;
-		};
-		2344B5EB204EA9FC00CEEB69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE566816187B72839E99419C /* Pods-GankTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GankTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxGank.parctise.GankTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Gank.app/Gank";
-			};
-			name = Release;
-		};
-		2344B5ED204EA9FC00CEEB69 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26CDE5E3ABEE486960A8CB44 /* Pods-GankUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxGank.parctise.GankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Gank;
-			};
-			name = Debug;
-		};
-		2344B5EE204EA9FC00CEEB69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F10459B3E6C7DA412561E209 /* Pods-GankUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GankUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RxGank.parctise.GankUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Gank;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1289,24 +906,6 @@
 			buildConfigurations = (
 				2344B5E7204EA9FC00CEEB69 /* Debug */,
 				2344B5E8204EA9FC00CEEB69 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2344B5E9204EA9FC00CEEB69 /* Build configuration list for PBXNativeTarget "GankTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2344B5EA204EA9FC00CEEB69 /* Debug */,
-				2344B5EB204EA9FC00CEEB69 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2344B5EC204EA9FC00CEEB69 /* Build configuration list for PBXNativeTarget "GankUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2344B5ED204EA9FC00CEEB69 /* Debug */,
-				2344B5EE204EA9FC00CEEB69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

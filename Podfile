@@ -4,34 +4,24 @@
 target 'Gank' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  pod 'RxSwift', '~> 4.1.2'
-  pod 'RxCocoa', '~> 4.1.2'
-  pod 'Moya', '~> 11.0.1'
+  pod 'RxSwift', '~> 4.3'
+  pod 'RxCocoa', '~> 4.3'
+  pod 'Moya', '~> 11.0.2'
   pod 'MJRefresh', '~> 3.1.15.1'
-  pod 'Action', '~> 3.5.0'
-  pod 'PKHUD'
-  pod 'RxSwiftExt', '~> 3.1.0'
-  pod 'RxDataSources', '~> 3.0.2'
+  pod 'Action', '~> 3.9.1'
+  pod 'PKHUD', '~> 5.2.0'
+  pod 'RxSwiftExt', '~> 3.4.0'
+  pod 'RxDataSources', '~> 3.1.0'
   pod 'Moya/RxSwift'
-  pod 'SwiftyJSON', '~> 4.0.0'
-  pod 'Kingfisher', '~> 4.5.0'
+  pod 'SwiftyJSON', '~> 4.2.0'
+  pod 'SDWebImage', '~> 5.0.0-beta3'
   pod 'UIView+Positioning', '~> 1.6'
-  pod 'SnapKit', '~> 4.0.0'
-  pod 'RxOptional', '~> 3.4.0'
+  pod 'SnapKit', '~> 4.2.0'
+  pod 'RxOptional', '~> 3.6.2'
   pod 'SwiftMessages', '~> 4.1.0'
-  pod 'NSObject+Rx', '~> 4.2.0'
-  pod 'SnapKit', '~> 4.0.0'
-  pod 'WCDB.swift', '~> 1.0.6.2'
-  pod 'FSCalendar', '~> 2.7.9'
+  pod 'NSObject+Rx', '~> 4.4.1'
+  # pod 'WCDB.swift', '~> 1.0.6.2'
+  pod 'FSCalendar', '~> 2.8.0'
   
-  target 'GankTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'GankUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+ 
 end

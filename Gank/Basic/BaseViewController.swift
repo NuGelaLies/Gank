@@ -1,5 +1,5 @@
 //
-//  TNBaseViewController.swift
+//  TN.swift
 //  todayNews
 //
 //  Created by NuGelaLiee on 2018/2/12.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class UBaseViewController: UIViewController {
     
     private(set) var didSetupConstraints = false
 

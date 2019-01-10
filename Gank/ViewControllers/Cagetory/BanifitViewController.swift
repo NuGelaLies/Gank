@@ -10,12 +10,12 @@ import RxSwift
 import RxCocoa
 import MJRefresh
 
-class BanifitViewController: BaseViewController {
+class BanifitViewController: UBaseViewController {
     let disposeBag = DisposeBag()
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categoryBelay: GNCategory!
-    lazy var viewModel = GNCategoryViewModel()
+    lazy var viewModel = GNCategoryViewModel(category: .Banifit)
     
     //let items = BehaviorRelay<[TNNews]>(value: [])
     
@@ -30,7 +30,7 @@ class BanifitViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
+       collectionView.mj_header.beginRefreshing()
     }
     
     override func setupSubViews() {
@@ -52,28 +52,31 @@ class BanifitViewController: BaseViewController {
     }
     
     override func bindViewModels() {
+        let inputs = viewModel.inputs
+        let outputs = viewModel.outputs
         
-        let input = GNCategoryViewModel.Input(
-            headerRefresh: self.collectionView.mj_header.rx.refreshing.asDriver(),
-            footerRefresh: self.collectionView.mj_footer.rx.refreshing.asDriver(),
-            category: self.categoryBelay,
-            disposebag: disposeBag)
+        collectionView.mj_header.rx.refreshing
+            .bind(to: inputs.headerRefresh)
+            .disposed(by: rx.disposeBag)
         
-        let output = viewModel.transform(input: input)
+        collectionView.mj_footer.rx.refreshing
+            .bind(to: inputs.footerRefresh)
+            .disposed(by: rx.disposeBag)
         
-        output.footerRefreshing
-            .drive(collectionView.mj_footer.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        output.headerRefreshing
-            .drive(collectionView.mj_header.rx.endRefreshing)
-            .disposed(by: disposeBag)
-        
-        output.tableData.asDriver()
-            .drive(collectionView.rx.items(cellIdentifier: "BanifitViewCell", cellType: BanifitViewCell.self)) {
+        outputs.endHeaderRefresh
+            .bind(to: collectionView.mj_header.rx.endRefreshing)
+            .disposed(by: rx.disposeBag)
+            
+        outputs.endFooterRefresh
+            .bind(to: collectionView.mj_footer.rx.endRefreshing)
+            .disposed(by: rx.disposeBag)
+            
+        outputs.tableData
+            .bind(to: collectionView.rx.items(cellIdentifier: "BanifitViewCell", cellType: BanifitViewCell.self)) {
                 row, model, cell in
                 cell.model = model
-            }.disposed(by: disposeBag)
+            }.disposed(by: rx.disposeBag)
+        
     }
 }
 

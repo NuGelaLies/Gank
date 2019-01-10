@@ -1,11 +1,10 @@
 PODS:
-  - Action (3.5.0):
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
+  - Action (3.9.1):
+    - RxCocoa (~> 4.3)
+    - RxSwift (~> 4.3)
   - Alamofire (4.7.1)
-  - Differentiator (3.0.2)
-  - FSCalendar (2.7.9)
-  - Kingfisher (4.5.0)
+  - Differentiator (3.1.0)
+  - FSCalendar (2.8.0)
   - MJRefresh (3.1.15.3)
   - Moya (11.0.2):
     - Moya/Core (= 11.0.2)
@@ -15,74 +14,104 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - NSObject+Rx (4.2.0):
-    - RxSwift (~> 4.0)
-  - PKHUD (5.0.0)
+  - "NSObject+Rx (4.4.1)":
+    - RxSwift (~> 4.3)
+  - PKHUD (5.2.0)
   - Result (3.2.4)
-  - RxCocoa (4.1.2):
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
-  - RxDataSources (3.0.2):
+  - RxDataSources (3.1.0):
     - Differentiator (~> 3.0)
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxOptional (3.4.0):
+  - RxOptional (3.6.2):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
-  - RxSwiftExt (3.1.0):
-    - RxSwiftExt/Core (= 3.1.0)
-  - RxSwiftExt/Core (3.1.0):
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - RxSwiftExt (3.4.0):
+    - RxSwiftExt/Core (= 3.4.0)
+    - RxSwiftExt/RxCocoa (= 3.4.0)
+  - RxSwiftExt/Core (3.4.0):
     - RxSwift (~> 4.0)
-  - SnapKit (4.0.0)
-  - SwiftMessages (4.1.0)
-  - SwiftyJSON (4.0.0)
-  - UIView+Positioning (1.6)
-  - WCDB.swift (1.0.6.2):
-    - WCDB.swift/sqlcipher (= 1.0.6.2)
-  - WCDB.swift/sqlcipher (1.0.6.2)
+  - RxSwiftExt/RxCocoa (3.4.0):
+    - RxCocoa (~> 4.0)
+    - RxSwiftExt/Core
+  - SDWebImage (5.0.0-beta3):
+    - SDWebImage/Core (= 5.0.0-beta3)
+  - SDWebImage/Core (5.0.0-beta3)
+  - SnapKit (4.2.0)
+  - SwiftMessages (4.1.4):
+    - SwiftMessages/App (= 4.1.4)
+  - SwiftMessages/App (4.1.4)
+  - SwiftyJSON (4.2.0)
+  - "UIView+Positioning (1.6)"
 
 DEPENDENCIES:
-  - Action (~> 3.5.0)
-  - FSCalendar (~> 2.7.9)
-  - Kingfisher (~> 4.5.0)
+  - Action (~> 3.9.1)
+  - FSCalendar (~> 2.8.0)
   - MJRefresh (~> 3.1.15.1)
-  - Moya (~> 11.0.1)
+  - Moya (~> 11.0.2)
   - Moya/RxSwift
-  - NSObject+Rx (~> 4.2.0)
-  - PKHUD
-  - RxCocoa (~> 4.1.2)
-  - RxDataSources (~> 3.0.2)
-  - RxOptional (~> 3.4.0)
-  - RxSwift (~> 4.1.2)
-  - RxSwiftExt (~> 3.1.0)
-  - SnapKit (~> 4.0.0)
+  - "NSObject+Rx (~> 4.4.1)"
+  - PKHUD (~> 5.2.0)
+  - RxCocoa (~> 4.3)
+  - RxDataSources (~> 3.1.0)
+  - RxOptional (~> 3.6.2)
+  - RxSwift (~> 4.3)
+  - RxSwiftExt (~> 3.4.0)
+  - SDWebImage (~> 5.0.0-beta3)
+  - SnapKit (~> 4.2.0)
   - SwiftMessages (~> 4.1.0)
-  - SwiftyJSON (~> 4.0.0)
-  - UIView+Positioning (~> 1.6)
-  - WCDB.swift (~> 1.0.6.2)
+  - SwiftyJSON (~> 4.2.0)
+  - "UIView+Positioning (~> 1.6)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Action
+    - Alamofire
+    - Differentiator
+    - FSCalendar
+    - MJRefresh
+    - Moya
+    - "NSObject+Rx"
+    - PKHUD
+    - Result
+    - RxAtomic
+    - RxCocoa
+    - RxDataSources
+    - RxOptional
+    - RxSwift
+    - RxSwiftExt
+    - SDWebImage
+    - SnapKit
+    - SwiftMessages
+    - SwiftyJSON
+    - "UIView+Positioning"
 
 SPEC CHECKSUMS:
-  Action: d60087ebce41b969d1afdad01e2fa1372a82f26e
+  Action: 2f461c203c480b17aa99b3bb166e4329ecff6908
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
-  Differentiator: a87be69eba49ec4ab460c7671143ee3a9eececfd
-  FSCalendar: a04b09f16f811bc92e82f3cf852a15225233b9d5
-  Kingfisher: 26ae0473102b77b575da51960c932431e3745407
+  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  NSObject+Rx: cbbc05e3cb3ad446cdbced3e00e39c9efaf02925
-  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  "NSObject+Rx": 9884a92f19b610795c431e10b4e601913b59c9e9
+  PKHUD: dd5357ac65f26115c35c4a68e9b328053326c5fe
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
-  RxOptional: fabc37fc8e3cf4c336ebaeb5c92b576c64b2e6c5
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
-  RxSwiftExt: a9b9c8e94be009146707f9fcb16eaf3cc1f3910c
-  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
-  SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  UIView+Positioning: 6e7236a429053ade11051fab7ff9053af36c77a8
-  WCDB.swift: 4f0f3e19085546ef85a69b5087ec5e1dec0f88b1
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
+  RxOptional: 80426a0ddbd092573e4c482d8cc13302078c4d5e
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxSwiftExt: 01f8ecbeeb355698e9c75365ebe908b00dacf45d
+  SDWebImage: e52654ceef9fdc19f4c612d64a5b6d3f05dd81a4
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  "UIView+Positioning": 6e7236a429053ade11051fab7ff9053af36c77a8
 
-PODFILE CHECKSUM: 221edd910c00c865ca95c7601cc0bfc44dc5b768
+PODFILE CHECKSUM: 4b54645d478162e895169bf095c2cffe357b28bf
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.0.beta.1

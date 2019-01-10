@@ -28,9 +28,7 @@ extension Reactive where Base: MJRefreshComponent {
         return Binder(self.base) { refresh, isEnd in
             if isEnd {
                 refresh.endRefreshing()
-            } else {
-                refresh.beginRefreshing()
-            }
+            } 
         }
     }
 }

@@ -15,7 +15,7 @@ protocol CalenderControllerDelegate: class {
     func selectCalender(to date: String)
 }
 
-class CalenderController: BaseViewController {
+class CalenderController: UBaseViewController {
     
     let disposeBag = DisposeBag()
     

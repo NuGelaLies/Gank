@@ -11,7 +11,7 @@ import RxCocoa
 import MJRefresh
 import RxDataSources
 
-class CategoryViewController: BaseViewController {
+class CategoryViewController: UBaseViewController {
     let disposeBag = DisposeBag()
     
     //var viewModel: GankCategoryViewModel!

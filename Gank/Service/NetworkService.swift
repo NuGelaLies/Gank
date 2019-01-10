@@ -64,20 +64,17 @@ final class NetworkService: GankNetworkService {
         return Api.analysis(.get(type, page))
             .observeOn(MainScheduler.instance)
             .mapModelArray(TNNews.self)
-            .doOnNext({ [weak self] (models) in
-                if models.count > 0 {
-                    self?.page = 2
-                }
-            }).shareOnce()
+            .shareOnce()
     }
 
     func loadMore(to type: GNCategory) -> Observable<[TNNews]> {
+        page += 1
         return Api.analysis(.get(type, page))
             .observeOn(MainScheduler.instance)
             .mapModelArray(TNNews.self)
             .doOnNext({ [weak self] (models) in
-                if models.count > 0 {
-                    self?.page += 1
+                if models.count <= 0 {
+                    self?.page -= 1
                 }
             }).shareOnce()
     }
